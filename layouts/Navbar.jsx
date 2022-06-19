@@ -1,0 +1,76 @@
+import React from "react";
+import Link from "next/link";
+import { useEffect } from "react";
+
+const Navbar = () => {
+  const navEffect = () => {
+    let navbar = document.getElementById("nav");
+    if (window.scrollY > 0) {
+      navbar.classList.add("nav_not_top", "shadow");
+    } else {
+      navbar.classList.remove("nav_not_top", "shadow");
+    }
+  };
+  useEffect(() => {
+    let btnToggler = document.querySelector(".navbar-toggler");
+    let navbar = document.getElementById("nav");
+    const handelNavClick = () => {
+      btnToggler.addEventListener("click", () => {
+        if (window.scrollY == 0) {
+          navbar.classList.toggle("nav_not_top");
+        }
+      });
+    };
+    handelNavClick();
+    navEffect();
+    window.addEventListener("scroll", navEffect);
+    return () => {
+      window.removeEventListener("scroll", navEffect);
+      handelNavClick();
+    };
+  }, []);
+
+  return (
+    <nav className="navbar navbar-expand-lg" id="nav">
+      <div className="container-fluid">
+        <Link href="/">
+          <a className="navbar-brand">Navbar</a>
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i className="fas fa-bars"></i>
+        </button>
+        <div
+          className="collapse navbar-collapse justify-content-end"
+          id="navbarNavAltMarkup"
+        >
+          <div className="navbar-nav">
+            <Link href="/">
+              <a className="nav-link mx-2 active" aria-current="page">
+                Home
+              </a>
+            </Link>
+            <Link href="/menu">
+              <a className="nav-link mx-2">Menu</a>
+            </Link>
+            <Link href="/contact">
+              <a className="nav-link mx-2">Contact us</a>
+            </Link>
+            <Link href="/about">
+              <a className="nav-link mx-2">About</a>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

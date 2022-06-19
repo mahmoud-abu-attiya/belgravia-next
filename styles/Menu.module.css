@@ -1,0 +1,17 @@
+.headerMenu{
+  background-image: url("../public/images/menu.jpg");
+}
+.headerOverlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom , rgba(0, 0, 0, 0.5), #fff);
+  z-index: 2;
+}
+.hello{
+  color: #fff;
+  z-index: 3;
+  text-align: center;
+}
