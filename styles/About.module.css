@@ -1,0 +1,32 @@
+.headerAbout{
+  background-image: url("../public/images/about.jpg");
+}
+.chefCard{
+  position: relative;
+  cursor: pointer;
+  border: 2px solid #ccc;
+}
+.chefImage{
+  filter: grayscale(100%);
+  transition: 0.3s;
+}
+.info{
+  z-index: 2;
+  color: var(--light--);
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background-image: linear-gradient(to top, #000, transparent);
+}
+.chefCard:hover .chefImage{
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+@media (max-width: 991px) {
+  .chefImage{
+    filter: grayscale(0%);
+  }
+}

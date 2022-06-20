@@ -37,7 +37,7 @@ const Swip = () => {
           <i className="fas fa-utensil-knife"></i>
           {swipImage.map((el, index) => (
             <SwiperSlide key={index} className="shadow">
-              <Image src={el} layout="fill" alt="belgravia food" />
+              <Image src={el} layout="fill" alt="belgravia food" className="image_border" />
             </SwiperSlide>
           ))}
         </Swiper>

@@ -11,18 +11,18 @@ const Section = (props) => {
         className={"row g-4 align-items-center " + props.revers}
         
       >
-        <div className={"col-md zena shadow p-0 rounded " + props.HIM} data-aos={props.aos}>
+        <div className={"zena shadow p-0 rounded " + props.HIM + " " + props.colimg} data-aos={props.aos}>
           <div className="frame" style={{left: props.frameP == "left" ? "-5%" : "5%"}}>
           <Image layout='fill' src={frame} alt="frame" className=""/>
           </div>
           <Image
-            className="rounded"
+            className="rounded image_border"
             src={props.img}
             alt={props.imgalt}
             layout="responsive"
           />
         </div>
-        <div className="col-md">
+        <div className={props.coltext}>
           <h2 data-aos="fade-up">{props.title}</h2>
           <p data-aos="fade-up">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
@@ -40,9 +40,7 @@ const Section = (props) => {
             natus dolor amet illo, hic recusandae excepturi asperiores
             maiores, facilis accusamus consequuntur optio!
           </p>
-          <Link href="#">
-            <a data-aos="fade-up" className="btn btn-outline btn-lg shadow">{props.btn}</a>
-          </Link>
+          {props.btn !== undefined ? <Link href={props.btnLink}><a data-aos="fade-up" className="btn btn-outline btn-lg shadow">{props.btn}</a></Link> : null}
         </div>
       </div>
     </div>
