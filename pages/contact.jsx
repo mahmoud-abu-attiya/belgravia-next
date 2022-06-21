@@ -6,6 +6,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Form from "../components/Form";
+import Info from "../components/Info";
 
 const contact = () => {
   return (
@@ -27,17 +28,16 @@ const contact = () => {
           crossOrigin="anonymous"
         />
       </Head>
-      <main className="text-center py-5">
+      <main className="text-center pt-5">
         <div className="container py-5">
           <div className="mb-5">
             <h2>Contact With us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus minima corrupti possimus sint nemo molestias eligendi non dolorum rem consequuntur?</p>
+            <p className="fw-bolder">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus minima corrupti possimus sint nemo molestias eligendi non dolorum rem consequuntur?</p>
           </div>
           <Form />
         </div>
       </main>
-      <div className="container">
-      </div>
+        <Info />
       <Script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"

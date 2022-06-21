@@ -23,10 +23,10 @@ const Footer = () => {
         </section>
       </div>
       <div className="text-center p-3" style={{backgroundColor: "rgba(0, 0, 0, 0.2)"}} >
-        © 2022 Copyright: Belgravia
-        <p className="fs-6"> Developed by{" "}
-          <a className="text-light text-underline" href="https://orizon.qa/"><u>Orizon Qatar</u></a>
-        </p>
+        © 2022 Copyright: <h5 className="d-inline">Belgravia</h5>
+        <div className="fs-6"> Developed by{" "}
+          <h6 className="d-inline"><a className="text-light text-underline" href="https://orizon.qa/"><u>Orizon Qatar</u></a></h6>
+        </div>
       </div>
     </footer>
   );

@@ -7,7 +7,6 @@ const Form = () => {
       let inpName = document.getElementById("floatingInputone")
       let inpEmail = document.getElementById("floatingInputtow")
       let inpMsg = document.getElementById("floatingTextarea2")
-      console.log(inpMsg);
       let myState = {
           name: inpName.value,
           email: inpEmail.value,
@@ -31,8 +30,6 @@ const Form = () => {
       e.preventDefault();
       formSubmit();
     })
-    return () => {
-    };
   }, []);
   return (
     <form className="row g-3 my-5 bg-light rounded-4 p-md-4 p-2 text-center image_border shadow" id="contactForm">
