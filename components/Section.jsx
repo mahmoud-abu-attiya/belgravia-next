@@ -40,7 +40,7 @@ const Section = (props) => {
             natus dolor amet illo, hic recusandae excepturi asperiores
             maiores, facilis accusamus consequuntur optio!
           </p>
-          {props.btn !== undefined ? <Link href={props.btnLink}><a data-aos="fade-up" className="btn btn-outline btn-lg shadow">{props.btn}</a></Link> : null}
+          {props.btn !== undefined ? <Link href={props.btnLink}><a data-aos="fade-up" className="btn btn-outline btn-lg shadow">{props.btn}</a></Link> : <></>}
         </div>
       </div>
     </div>

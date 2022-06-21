@@ -17,7 +17,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   background-image: linear-gradient(to top, #000, transparent);
 }
 .chefCard:hover .chefImage{

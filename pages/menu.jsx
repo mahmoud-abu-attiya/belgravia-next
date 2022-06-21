@@ -65,7 +65,7 @@ export default function Menu() {
         <div className="row">
         {meals.map((meal, index) => (
           <div className="col-md-6"  key={index}>
-            <div className="card mb-4 shadow">
+            <div className="card mb-4 shadow" data-aos="fade-up">
             <div>
               <Image
                 src={meal.strMealThumb}

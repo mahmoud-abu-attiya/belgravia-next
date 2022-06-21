@@ -5,6 +5,7 @@ import styles from "../styles/Menu.module.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Form from "../components/Form";
 
 const contact = () => {
   return (
@@ -26,28 +27,17 @@ const contact = () => {
           crossOrigin="anonymous"
         />
       </Head>
-      <header className={styles.headerAbout}>
-        <div className="header-overlay"></div>
-        <div className="hello">
-          <h1 data-aos="fade-up" data-aos-duration="300">
-            Welcome to Belgravia Restaurant
-          </h1>
-          <p data-aos="fade-up" data-aos-duration="500">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Dignissimos, est.
-          </p>
-          <Link href="/reservation">
-            <a
-              data-aos="fade-up"
-              data-aos-duration="700"
-              className="btn btn-lg shadow"
-            >
-              Book a table
-            </a>
-          </Link>
+      <main className="text-center py-5">
+        <div className="container py-5">
+          <div className="mb-5">
+            <h2>Contact With us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus minima corrupti possimus sint nemo molestias eligendi non dolorum rem consequuntur?</p>
+          </div>
+          <Form />
         </div>
-      </header>
-      <div>contact us</div>
+      </main>
+      <div className="container">
+      </div>
       <Script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
