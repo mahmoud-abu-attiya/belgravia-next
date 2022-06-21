@@ -12,8 +12,6 @@ import c4 from "../public/images/c4.jpg"
 import c5 from "../public/images/c5.jpg"
 import c6 from "../public/images/c6.jpg"
 import Image from "next/image";
-// import axios from "axios";
-// import { useState, useEffect } from "react";
 
 const about = () => {
   const staff = [
@@ -54,7 +52,6 @@ const about = () => {
       contactLink: "#"
     },
   ]
-  console.log(staff);
   return (
     <>
       <Head>

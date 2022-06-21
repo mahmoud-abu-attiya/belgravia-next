@@ -14,7 +14,6 @@ export default function Menu() {
       .get(`https://www.themealdb.com/api/json/v1/1/filter.php?i=beef`)
       .then((response) => {
         setMeals(response.data.meals);
-        console.log(meals);
       })
       .catch((error) => {
         setError(error);

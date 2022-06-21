@@ -1,9 +1,10 @@
 import '../styles/globals.css'
 import Navbar from "../layouts/Navbar"
 import Footer from "../layouts/Footer"
-import { useEffect } from 'react'
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Loading from '../layouts/Loading';
+import { useEffect } from 'react'
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Navbar />
+      <Loading />
       <Component {...pageProps} />
       <Footer />
     </>

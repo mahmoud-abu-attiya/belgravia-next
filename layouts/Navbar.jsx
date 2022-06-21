@@ -52,18 +52,18 @@ const Navbar = () => {
           id="navbarNavAltMarkup"
         >
           <div className="navbar-nav">
-            <Link href="/">
+            <Link href="/" passHref>
               <a className="nav-link mx-2 active" aria-current="page">
                 Home
               </a>
             </Link>
-            <Link href="/menu">
+            <Link href="/menu" passHref>
               <a className="nav-link mx-2">Menu</a>
             </Link>
-            <Link href="/contact">
+            <Link href="/contact" passHref>
               <a className="nav-link mx-2">Contact us</a>
             </Link>
-            <Link href="/about">
+            <Link href="/about" passHref>
               <a className="nav-link mx-2">About</a>
             </Link>
           </div>
