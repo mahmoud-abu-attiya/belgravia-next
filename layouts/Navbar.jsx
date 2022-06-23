@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import { useEffect } from "react";
 
@@ -53,18 +52,21 @@ const Navbar = () => {
         >
           <div className="navbar-nav">
             <Link href="/" passHref>
-              <a className="nav-link mx-2 active" aria-current="page">
+              <a className="nav-link mx-2" aria-current="page">
                 Home
               </a>
             </Link>
             <Link href="/menu" passHref>
               <a className="nav-link mx-2">Menu</a>
             </Link>
-            <Link href="/contact" passHref>
-              <a className="nav-link mx-2">Contact us</a>
+            <Link href="/reservation" passHref>
+              <a className="nav-link mx-2">Reservation</a>
             </Link>
             <Link href="/about" passHref>
               <a className="nav-link mx-2">About</a>
+            </Link>
+            <Link href="/contact" passHref>
+              <a className="nav-link mx-2">Contact us</a>
             </Link>
           </div>
         </div>

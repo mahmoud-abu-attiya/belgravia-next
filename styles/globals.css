@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap");
 :root{
-  --darkredone--:rgb(51, 0, 0);
+  --darkredone--:#330000;
   --darkredtwo--:rgb(83, 0, 0);
   --red--:rgb(126, 0, 0);
   --light--: #f8f9fa;
@@ -32,21 +32,69 @@ h1, h2, h3, h4, h5, h6{text-transform: uppercase;}
 
 header{
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   place-content: center;
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 .header-overlay{
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
   background-color: black;
   opacity: 0.5;
   z-index: 2;
+}
+header.reservation {
+  background-image: linear-gradient(to top,rgb(204, 204, 204), rgba(248, 249, 250, 0.9), transparent), url("../public/images/res.jpg");
+}
+header.reservation .row{
+  z-index: 3;
+  position: relative;
+}
+header.reservation .row form{
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+header.reservation .row form input , header.reservation .row form select{
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid #ccc !important;
+  padding: 5px 10px;
+}
+header.reservation .row form .time{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header.reservation .row form select{
+  width: fit-content;
+  display: inline-block;
+}
+header.reservation .row form select{
+
+}
+header.reservation .row form input[type="radio"]{
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-left:15px;
+  margin-right: 5px;
+  padding: 0;
+}
+header.reservation .row form .form-check-input:checked{
+  background-color: var(--darkredone--);
 }
 .hello{
   color: #fff;
@@ -168,11 +216,10 @@ footer a.btn:hover{
   height: 100%;
   top: -8%;
 }
-.swiper {
+/* .swiper {
   width: 280px;
   height: 340px;
-}
-
+} */
 .swiper-slide {
   display: flex;
   align-items: center;
@@ -180,7 +227,7 @@ footer a.btn:hover{
   border-radius: 18px;
   font-size: 22px;
   font-weight: bold;
-  color: #fff;
+  /* color: #fff; */
 }
 .mySwiper i{
   position: absolute;
@@ -194,45 +241,9 @@ footer a.btn:hover{
 .mySwiper i.fa-utensil-knife{
   left: 150%;
 }
-
-.swiper-slide:nth-child(1n) {
-  background-color: rgb(206, 17, 17);
-}
-
-.swiper-slide:nth-child(2n) {
-  background-color: rgb(0, 140, 255);
-}
-
-.swiper-slide:nth-child(3n) {
-  background-color: rgb(10, 184, 111);
-}
-
-.swiper-slide:nth-child(4n) {
-  background-color: rgb(211, 122, 7);
-}
-
-.swiper-slide:nth-child(5n) {
-  background-color: rgb(118, 163, 12);
-}
-
-.swiper-slide:nth-child(6n) {
-  background-color: rgb(180, 10, 47);
-}
-
-.swiper-slide:nth-child(7n) {
-  background-color: rgb(35, 99, 19);
-}
-
-.swiper-slide:nth-child(8n) {
-  background-color: rgb(0, 68, 255);
-}
-
-.swiper-slide:nth-child(9n) {
-  background-color: rgb(218, 12, 218);
-}
-
-.swiper-slide:nth-child(10n) {
-  background-color: rgb(54, 94, 77);
+.swip-active{
+  background-color: var(--darkredone--);
+  color: var(--light--);
 }
 @media (max-width: 991px) {
   .navbar .nav-link {

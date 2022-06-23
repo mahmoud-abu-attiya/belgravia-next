@@ -32,6 +32,7 @@ const Swip = () => {
           modules={[EffectCards]}
           className="mySwiper"
           data-aos="zoom-in-up"
+          style={{width: 280, height: 340}}
         >
           <i className="fas fa-utensil-fork"></i>
           <i className="fas fa-utensil-knife"></i>

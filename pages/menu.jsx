@@ -5,11 +5,46 @@ import styles from "../styles/Menu.module.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import ScrollDownBtn from "../components/ScrollDownBtn";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 export default function Menu() {
   const [meals, setMeals] = useState([]);
+  const categorys = [
+    "all",
+    "meal",
+    "egg",
+    "beef",
+    "sharm",
+    "drinks",
+    "breakfast",
+    "dinner",
+    "burger",
+    "fish",
+  ];
+  const [category, setCategory] = useState(categorys[0])
 
+  
   useEffect(() => {
+    const handelCategory = (e)=>{
+      let swipbtns = document.querySelectorAll("#category")
+      swipbtns.forEach(btn => {
+        btn.onclick = () => {
+          console.log(category);
+          setCategory()
+          setCategory(btn.textContent)
+          console.log(category);
+          setTimeout(() => {
+            console.log(category);
+            
+          }, 1000);
+        }
+      })
+    }
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/filter.php?i=beef`)
       .then((response) => {
@@ -18,7 +53,11 @@ export default function Menu() {
       .catch((error) => {
         setError(error);
       });
-  }, []);
+    
+      return () => {
+        handelCategory()
+      };
+  });
 
   return (
     <>
@@ -58,40 +97,63 @@ export default function Menu() {
               Book a table
             </a>
           </Link>
+          <ScrollDownBtn />
         </div>
       </header>
-      <div className="container">
+      <div className="container pt-5" id="menu">
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={30}
+          slidesPerGroup={3}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Navigation]}
+          className="mySwiper my-5"
+          style={{ color: "#330000" }}
+        >
+          {categorys.map((cat, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <button className="btn btn-outline" id="category">{cat}</button>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
         <div className="row">
-        {meals.map((meal, index) => (
-          <div className="col-md-6"  key={index}>
-            <div className="card mb-4 shadow" data-aos="fade-up">
-            <div>
-              <Image
-                src={meal.strMealThumb}
-                className="card-img-top"
-                alt={meal.strMeal}
-                width={2}
-                height={1}
-                layout='responsive'
-                objectFit="cover"
-                // placeholder="blur"
-                // blurDataURL=”data:image/png;base64,[IMAGE_CODE_FROM_PNG_PIXEL]”
-                loading="eager"
-                priority
-              />
+          {meals.map((meal, index) => (
+            <div className="col-md-6" key={index}>
+              <div className="card mb-4 shadow" data-aos="fade-up">
+                <div>
+                  <Image
+                    src={meal.strMealThumb}
+                    className="card-img-top"
+                    alt={meal.strMeal}
+                    width={2}
+                    height={1}
+                    layout="responsive"
+                    objectFit="cover"
+                    loading="eager"
+                    priority
+                  />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title">{meal.strMeal}</h5>
+                  <p className="card-text">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <p className="card-text rounded shadow price">
+                    {meal.idMeal} $
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="card-body">
-              <h5 className="card-title">{meal.strMeal}</h5>
-              <p className="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-              <p className="card-text rounded shadow price">{meal.idMeal} $</p>
-            </div>
-          </div>
-          </div>
-        ))}
+          ))}
         </div>
       </div>
       <Script
