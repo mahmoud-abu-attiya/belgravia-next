@@ -14,50 +14,45 @@ import "swiper/css/navigation";
 
 export default function Menu() {
   const [meals, setMeals] = useState([]);
-  const categorys = [
-    "all",
-    "meal",
-    "egg",
-    "beef",
-    "sharm",
-    "drinks",
-    "breakfast",
-    "dinner",
-    "burger",
-    "fish",
-  ];
-  const [category, setCategory] = useState(categorys[0])
+  // const categorys = [
+  //   "chicken",
+  //   "meal",
+  //   "egg",
+  //   "beef",
+  //   "sharm",
+  //   "drinks",
+  //   "breakfast",
+  //   "dinner",
+  //   "burger",
+  //   "fish",
+  // ];
+  const [categorys, setCategorys] = useState([])
+  const [category, setCategory] = useState('chicken')
 
   
   useEffect(() => {
-    const handelCategory = (e)=>{
-      let swipbtns = document.querySelectorAll("#category")
-      swipbtns.forEach(btn => {
-        btn.onclick = () => {
-          console.log(category);
-          setCategory()
-          setCategory(btn.textContent)
-          console.log(category);
-          setTimeout(() => {
-            console.log(category);
-            
-          }, 1000);
-        }
-      })
-    }
     axios
-      .get(`https://www.themealdb.com/api/json/v1/1/filter.php?i=beef`)
+      .get(`https://www.themealdb.com/api/json/v1/1/list.php?c=list`)
       .then((response) => {
+        console.log(response.data);
+        setCategorys(response.data.meals )
+      })
+      .catch((error) => {
+        setError(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
+      .then((response) => {
+        // console.log(response.data);
         setMeals(response.data.meals);
       })
       .catch((error) => {
         setError(error);
       });
-    
-      return () => {
-        handelCategory()
-      };
-  });
+  }, [category]);
 
   return (
     <>
@@ -118,7 +113,7 @@ export default function Menu() {
           {categorys.map((cat, index) => {
             return (
               <SwiperSlide key={index}>
-                <button className="btn btn-outline" id="category">{cat}</button>
+                <button className={ cat.strCategory == category ? 'active-cat btn btn-outline category': 'btn btn-outline category'} onClick={()=> setCategory(cat.strCategory)}>{cat.strCategory}</button>
               </SwiperSlide>
             );
           })}

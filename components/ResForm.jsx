@@ -43,13 +43,13 @@ const ResForm = () => {
         <label className="form-check-label" htmlFor="flexRadioDefault1"> outDoor </label>
       </div>
       <div className="name">
-        <input type="text" name="" id="" placeholder="Your Name" />
+        <input type="text" placeholder="Your Name" />
       </div>
       <div className="phone">
-        <input type="text" name="" id="" placeholder="Your Phone number" />
+        <input type="text" placeholder="Your Phone number" />
       </div>
       <div className="done">
-        <input type="submit" className="btn btn-outline" value="Book" />
+        <input type="submit" className="btn" style={{backgroundColor: "#350000", color: "#FFF"}} value="Book" />
       </div>
     </form>
   )

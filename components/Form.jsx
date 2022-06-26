@@ -4,8 +4,8 @@ import swal from 'sweetalert';
 const Form = () => {
   useEffect(() => {
     const formSubmit=()=>{
-      let inpName = document.getElementById("floatingInputone")
-      let inpEmail = document.getElementById("floatingInputtow")
+      let inpEmail = document.getElementById("floatingInputone")
+      let inpName = document.getElementById("floatingInputtow")
       let inpMsg = document.getElementById("floatingTextarea2")
       let myState = {
           name: inpName.value,

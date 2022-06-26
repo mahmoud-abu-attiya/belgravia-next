@@ -51,7 +51,7 @@ header{
   z-index: 2;
 }
 header.reservation {
-  background-image: linear-gradient(to top,rgb(204, 204, 204), rgba(248, 249, 250, 0.9), transparent), url("../public/images/res.jpg");
+  background-image: linear-gradient(to top,rgb(204, 204, 204), rgba(248, 249, 250, 0.9), transparent), url("../public/images/header.jpg");
 }
 header.reservation .row{
   z-index: 3;
@@ -244,6 +244,10 @@ footer a.btn:hover{
 .swip-active{
   background-color: var(--darkredone--);
   color: var(--light--);
+}
+.active-cat{
+  background-color: var(--darkredone--) !important;
+  color: var(--light--) !important;
 }
 @media (max-width: 991px) {
   .navbar .nav-link {
