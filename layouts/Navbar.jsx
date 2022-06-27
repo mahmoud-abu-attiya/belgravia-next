@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
+import log from "../public/images/logo.png"
 
 const Navbar = () => {
   const navEffect = () => {
@@ -33,7 +35,9 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg" id="nav">
       <div className="container-fluid">
         <Link href="/">
-          <a className="navbar-brand">Navbar</a>
+          <a className="navbar-brand">
+            <Image src={log} alt="belgravia" width={200} height={100} />
+          </a>
         </Link>
         <button
           className="navbar-toggler"

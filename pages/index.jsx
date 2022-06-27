@@ -23,7 +23,7 @@ export default function Home() {
           <h1 data-aos="fade-up" data-aos-duration="300">Welcome to Belgravia Restaurant</h1>
           <p data-aos="fade-up" data-aos-duration="500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, est.</p>
           <Link href="/reservation">
-            <a data-aos="fade-up" data-aos-duration="700" className="btn btn-lg shadow">Book a table</a>
+            <a data-aos="fade-up" data-aos-duration="700" className="btn btn-lg shadow rounded-pill">Book a table</a>
           </Link>
         </div>
       </header>
