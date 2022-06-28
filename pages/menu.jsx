@@ -34,7 +34,7 @@ export default function Menu() {
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/list.php?c=list`)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setCategorys(response.data.meals )
       })
       .catch((error) => {
@@ -88,7 +88,7 @@ export default function Menu() {
             <a
               data-aos="fade-up"
               data-aos-duration="700"
-              className="btn btn-lg shadow"
+              className="btn btn-lg shadow rounded-pill"
             >
               Book a table
             </a>
@@ -128,8 +128,8 @@ export default function Menu() {
                     src={meal.strMealThumb}
                     className="card-img-top"
                     alt={meal.strMeal}
-                    width={2}
-                    height={1}
+                    width={16}
+                    height={9}
                     layout="responsive"
                     objectFit="cover"
                     loading="eager"

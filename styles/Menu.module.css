@@ -7,7 +7,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-image: linear-gradient(to bottom , rgba(0, 0, 0, 0.5), #fff);
+  background-color: rgb(255 255 255 / 50%);
+  background-image: linear-gradient(to top, var(--light--), transparent, var(--light--));
   z-index: 2;
 }
 .hello{

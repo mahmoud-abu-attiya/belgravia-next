@@ -36,7 +36,7 @@ const Navbar = () => {
       <div className="container-fluid">
         <Link href="/">
           <a className="navbar-brand">
-            <Image src={log} alt="belgravia" width={200} height={100} />
+            <Image src={log} alt="belgravia" />
           </a>
         </Link>
         <button

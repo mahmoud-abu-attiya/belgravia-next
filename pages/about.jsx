@@ -85,7 +85,7 @@ const about = () => {
             <a
               data-aos="fade-up"
               data-aos-duration="700"
-              className="btn btn-lg shadow"
+              className="btn btn-lg shadow rounded-pill"
             >
               Contact Us
             </a>
@@ -97,7 +97,7 @@ const about = () => {
         revers= "flex-row-reverse"
         frameP= "right"
         HIM="HIM"
-        aos="fade-right"
+        aos="fade-left"
         img={hImg}
         imgalt = "belgravia"
         title= "About Belgravia"
