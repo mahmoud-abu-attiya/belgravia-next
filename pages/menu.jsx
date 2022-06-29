@@ -14,18 +14,6 @@ import "swiper/css/navigation";
 
 export default function Menu() {
   const [meals, setMeals] = useState([]);
-  // const categorys = [
-  //   "chicken",
-  //   "meal",
-  //   "egg",
-  //   "beef",
-  //   "sharm",
-  //   "drinks",
-  //   "breakfast",
-  //   "dinner",
-  //   "burger",
-  //   "fish",
-  // ];
   const [categorys, setCategorys] = useState([])
   const [category, setCategory] = useState('chicken')
 
@@ -34,7 +22,6 @@ export default function Menu() {
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/list.php?c=list`)
       .then((response) => {
-        // console.log(response.data);
         setCategorys(response.data.meals )
       })
       .catch((error) => {
@@ -46,7 +33,6 @@ export default function Menu() {
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
       .then((response) => {
-        // console.log(response.data);
         setMeals(response.data.meals);
       })
       .catch((error) => {
@@ -99,8 +85,8 @@ export default function Menu() {
       <div className="container pt-5" id="menu">
         <Swiper
           slidesPerView={3}
-          spaceBetween={30}
-          slidesPerGroup={3}
+          spaceBetween={10}
+          slidesPerGroup={1}
           loop={true}
           loopFillGroupWithBlank={true}
           pagination={{
@@ -109,7 +95,7 @@ export default function Menu() {
           navigation={true}
           modules={[Navigation]}
           className="mySwiper my-5"
-          style={{ color: "#330000" }}
+          // style={{ color: "#330000" }}
         >
           {categorys.map((cat, index) => {
             return (
@@ -119,10 +105,10 @@ export default function Menu() {
             );
           })}
         </Swiper>
-        <div className="row">
+        <div className="row row-cols-1 row-cols-md-2 g-4">
           {meals.map((meal, index) => (
-            <div className="col-md-6" key={index}>
-              <div className="card mb-4 shadow" data-aos="fade-up">
+            <div className="col" key={index}>
+              <div className="card mb-4 shadow h-100" data-aos="fade-up">
                 <div>
                   <Image
                     src={meal.strMealThumb}
@@ -143,7 +129,7 @@ export default function Menu() {
                     lead-in to additional content. This content is a little bit
                     longer.
                   </p>
-                  <p className="card-text rounded shadow price">
+                  <p className="card-text rounded shadow price mt-auto">
                     {meal.idMeal} $
                   </p>
                 </div>

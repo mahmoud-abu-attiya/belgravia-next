@@ -1,5 +1,9 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap"); */
-@import url('http://fonts.cdnfonts.com/css/berliana-lovely');
+/* @import url('http://fonts.cdnfonts.com/css/berliana-lovely'); */
+@font-face {
+  font-family: "Berliana Lovely";
+  src: url(../fonts/Berliana\ Lovely\ Freebies.otf);
+}
 :root{
   --darkredone--:#330000;
   --darkredtwo--:rgb(83, 0, 0);
@@ -21,7 +25,7 @@ h2{
 
 h1, h2, h3, h4, h5, h6, a{
   text-transform: uppercase;
-  font-family: 'Berliana Lovely', sans-serif !important;
+  font-family: 'Berliana Lovely' !important;
 }
 
 #loading{
@@ -190,10 +194,19 @@ main{
   background-color: rgba(59, 0, 0, 0.205);
   /* border-bottom: 1px solid var(--darkredtwo--); */
 }
-/* .card{
-  max-width: 900px;
-  margin: auto;
-} */
+
+.swiper-button-next, .swiper-button-prev{
+  /* transform: translate( -50%, 0%); */
+}
+.swiper-button-next{
+  right: 0 !important;
+}
+.swiper-button-prev{
+  left: 0 !important;
+}
+.swiper-button-next:after, .swiper-button-prev:after{
+  color: var(--darkredtwo--);
+}
 section{
   overflow: hidden;
 }
