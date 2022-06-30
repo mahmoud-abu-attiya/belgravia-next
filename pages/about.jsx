@@ -5,52 +5,48 @@ import styles from "../styles/About.module.css";
 import Section from "../components/Section";
 import hImg from "../public/images/about2.jpg"
 import chef from "../public/images/chef.jpg"
-import c1 from "../public/images/c1.jpg"
-import c2 from "../public/images/c2.jpg"
-import c3 from "../public/images/c3.jpg"
-import c4 from "../public/images/c4.jpg"
-import c5 from "../public/images/c5.jpg"
-import c6 from "../public/images/c6.jpg"
+import c1 from "../public/images/staff.jpg"
+import c2 from "../public/images/ceo.jpg"
+import c3 from "../public/images/headChef.jpg"
+import c4 from "../public/images/resiption.jpg"
+import c5 from "../public/images/weater.jpg"
+import c6 from "../public/images/weater2.jpg"
+import cstaff from "../public/images/ckitchenStaff.jpg"
 import Image from "next/image";
 
 const about = () => {
   const staff = [
     {
-      img: c1,
-      name: "chef name",
-      recipe: "chef position",
-      contactLink: "#"
-    },
-    {
       img: c2,
-      name: "chef name",
+      name: "name",
       recipe: "chef position",
-      contactLink: "#"
     },
     {
       img: c3,
-      name: "chef name",
+      name: "name",
       recipe: "chef position",
-      contactLink: "#"
     },
     {
       img: c4,
-      name: "chef name",
+      name: "name",
       recipe: "chef position",
-      contactLink: "#"
     },
     {
       img: c5,
-      name: "chef name",
+      name: "name",
       recipe: "chef position",
       contactLink: "#"
     },
     {
       img: c6,
-      name: "chef name",
+      name: "name",
       recipe: "chef position",
-      contactLink: "#"
     },
+    {
+      img: cstaff,
+      name: "Ckitchen Staff",
+      recipe: null,
+    }
   ]
   return (
     <>
@@ -118,10 +114,26 @@ const about = () => {
       />
       <section className="staff bg-light py-5">
         <div className="container">
-          <div className="row g-4">
             <div className="text-center">
               <h2>Our staff</h2>
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, dolore!</p>
+            </div>
+          <div className="row g-4">
+            <div className="col-12">
+              <div className={styles.chefCard + " rounded shadow overflow-hidden ratio ratio-21x9"}>
+                <Image
+                  src={c1} 
+                  className={styles.chefImage} 
+                  layout="fill" 
+                  alt="Belgravia staff"
+                  objectFit="cover"
+                  priority
+                  />
+                <div className={styles.info}>
+                  <h4>Belgravia staff</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse aperiam, perferendis ut nam</p>
+                </div>
+              </div>
             </div>
             {staff.map((chef, index) => {
               return (
@@ -138,7 +150,6 @@ const about = () => {
                   <div className={styles.info}>
                     <h4>{chef.name}</h4>
                     <p>{chef.recipe}</p>
-                    <a href={chef.contactLink}>contact</a>
                   </div>
                 </div>
               </div>

@@ -3,12 +3,16 @@ import { useState,useEffect } from 'react'
 
 function Loading() {
   const router = useRouter();
-
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const handleStart = () => { setLoading(true) }
-    const handleStop = () => { setTimeout(() => {setLoading(false) }, 1000); }
+    const handleStop = () => {
+      setTimeout(() => {setLoading(false) }, 1000);
+      if (window.innerWidth < 991) {
+        document.querySelector(".navbar-toggler").click();
+      }
+    }
 
     router.events.on('routeChangeStart', handleStart)
     router.events.on('routeChangeComplete', handleStop)

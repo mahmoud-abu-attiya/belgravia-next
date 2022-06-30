@@ -1,5 +1,6 @@
 .headerAbout{
   background-image: url("../public/images/about.jpg");
+  background-position: center 20%;
 }
 .chefCard{
   position: relative;

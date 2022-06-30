@@ -84,7 +84,7 @@ export default function Menu() {
       </header>
       <div className="container pt-5" id="menu">
         <Swiper
-          slidesPerView={3}
+          slidesPerView={5}
           spaceBetween={10}
           slidesPerGroup={1}
           loop={true}
@@ -105,7 +105,7 @@ export default function Menu() {
             );
           })}
         </Swiper>
-        <div className="row row-cols-1 row-cols-md-2 g-4">
+        <div className="row row-cols-1 row-cols-md-2 g-4 mb-5">
           {meals.map((meal, index) => (
             <div className="col" key={index}>
               <div className="card mb-4 shadow h-100" data-aos="fade-up">

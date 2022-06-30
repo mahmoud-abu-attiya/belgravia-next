@@ -62,7 +62,7 @@ header{
 }
 header.reservation {
   /* background-image: linear-gradient(to top,rgb(204, 204, 204), rgba(248, 249, 250, 0.9), transparent), url("../public/images/header.jpg"); */
-  background-image: linear-gradient(to top, var(--light--), rgb(255 255 255 / 50%), var(--light--)), url("../public/images/header.jpg");
+  background-image: linear-gradient(to top, var(--light--), rgb(255 255 255 / 50%), var(--light--)), url("../public/images/bookwomen.jpg");
   /* background-color: rgb(255 255 255 / 50%); */
 }
 header.reservation .row{
@@ -148,9 +148,14 @@ header.reservation .row form .form-check-input:checked{
 }
 
 main{
-  background-image: linear-gradient(to top, #fff 50%,#ccc, rgba(77, 77, 77, 0.356)),url("../public/images/about.jpg");
+  background-image: linear-gradient(to top, #fff,#ccc, rgba(255, 255, 255, 0.356)),url("../public/images/about.jpg");
   background-size: cover;
   background-position: center;
+}
+
+main form{
+  backdrop-filter: blur(10px);
+  background-color: #33000048;
 }
 
 .form-control:focus{

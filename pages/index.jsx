@@ -3,8 +3,8 @@ import Script from 'next/script'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import Section from '../components/Section'
-import hImg from '../public/images/header.jpg'
-import hImg2 from '../public/images/rest.jpg'
+import hImg from '../public/images/out.jpg'
+import hImg2 from '../public/images/bookt.jpg'
 import Swip from '../components/Swip'
 
 export default function Home() {

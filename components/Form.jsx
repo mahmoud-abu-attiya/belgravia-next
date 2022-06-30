@@ -32,7 +32,7 @@ const Form = () => {
     })
   }, []);
   return (
-    <form className="row g-3 my-5 bg-light rounded-4 p-md-4 p-2 text-center image_border shadow" id="contactForm">
+    <form className="row g-3 my-5 rounded-4 p-md-4 p-2 text-center image_border shadow" id="contactForm">
       <div className="col-md-6 form-floating mb-3">
         <input type="email" className="form-control" id="floatingInputone" placeholder='Email address' required/>
         <label className='px-3' htmlFor="floatingInput">Email address</label>
