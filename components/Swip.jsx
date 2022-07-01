@@ -13,6 +13,8 @@ import d7 from "../public/images/d7.jpg";
 import d8 from "../public/images/d8.jpg";
 import d9 from "../public/images/d9.jpg";
 import Link from "next/link";
+import fork from "../public/images/fork.png"
+import knife from "../public/images/knife.png"
 
 const Swip = () => {
   let swipImage = [d1, d2, d3, d4, d5, d6, d7, d8, d9];
@@ -34,8 +36,12 @@ const Swip = () => {
           data-aos="zoom-in-up"
           style={{width: 280, height: 340}}
         >
-          <i className="fas fa-utensil-fork"></i>
-          <i className="fas fa-utensil-knife"></i>
+          <div className="tool fork">
+            <Image src={fork} alt="fork" />
+          </div>
+          <div className="tool knife">
+            <Image src={knife} alt="knife" />
+          </div>
           {swipImage.map((el, index) => (
             <SwiperSlide key={index} className="shadow">
               <Image src={el} layout="fill" alt="belgravia food" className="image_border" />

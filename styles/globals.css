@@ -259,17 +259,15 @@ footer a.btn:hover{
   font-weight: bold;
   /* color: #fff; */
 }
-.mySwiper i{
+.mySwiper .tool{
   position: absolute;
-  top: 50%;
-  font-size: 150px;
+  top: 60%;
   left: -50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-  color: var(--darkredone--);
-  filter: drop-shadow(0 .5rem 1rem rgba(0,0,0,.15));
+  transform: translate(-50%, -50%);
 }
-.mySwiper i.fa-utensil-knife{
-  left: 150%;
+.mySwiper .knife{
+  right: -80%;
+  left: auto;
 }
 .swip-active{
   background-color: var(--darkredone--);
@@ -293,7 +291,7 @@ footer a.btn:hover{
   }
 }
 @media (max-width:767px) {
-  .HIM, .mySwiper i{
+  .HIM, .mySwiper .tool{
     display: none;
   }
   .zena{
