@@ -1,11 +1,11 @@
 import styles from "../styles/ScrollBtn.module.css"
 import { useEffect } from "react"
-const ScrollDownBtn = () => {
+const ScrollDownBtn = (props) => {
   useEffect(()=>{
-    let menu = document.getElementById("menu")
+    let scrollTarget = document.getElementById(props.target)
     let scrollBtn = document.getElementById("scrollBtn")
     scrollBtn.addEventListener("click", ()=>{
-      menu.scrollIntoView({
+      scrollTarget.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
         inline: 'nearest',
@@ -13,14 +13,14 @@ const ScrollDownBtn = () => {
     })
     return () => {
       scrollBtn.removeEventListener("click", ()=>{
-        menu.scrollIntoView({
+        scrollTarget.scrollIntoView({
           behavior: 'smooth',
           block: 'start',
           inline: 'nearest',
         });
       })
     };
-  })
+  }, [])
 
   return (
     <div className={styles.scroll} id="scrollBtn">

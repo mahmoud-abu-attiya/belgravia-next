@@ -5,7 +5,7 @@ import frame from "../public/images/frame.png";
 
 const Section = (props) => {
   return (
-    <section className={"about py-5 " + props.bg}>
+    <section className={"about py-5 " + props.bg} id={props.id}>
       <div className="container">
         <div className={"row g-4 align-items-center " + props.revers}>
           <div

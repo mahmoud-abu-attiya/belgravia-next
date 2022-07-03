@@ -12,6 +12,6 @@
     /* opacity: 0.5; */
     z-index: 2;
     /* box-shadow: 0px 0px 50px 27px #fff inset; */
-    /* background-image: linear-gradient(to top, var(--light--), transparent, var(--light--)); */
+    background-image: linear-gradient(to top, var(--light--), transparent, var(--light--));
 }
 
