@@ -309,7 +309,20 @@ section {
 }
 
 .call-icon{
-  position: absolute;
+  color: var(--gray--);
+  position: fixed;
+  background-color: #fff;
+  bottom: -1%;
+  right: 7%;
+  transform: translate(-50%, -50%);
+  /* border-radius: 50%; */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 10;
 }
 
 footer a.btn {
@@ -389,6 +402,12 @@ footer a.btn:hover {
 }
 
 @media (max-width:767px) {
+  .call-icon{
+    padding: 16px;
+    font-size: 17px;
+    bottom: 0%;
+    right: 17%;
+  }
 
   .HIM,
   .mySwiper .tool {
