@@ -147,7 +147,7 @@ const about = () => {
             })}
           </div>
             <div className="text-center mt-4">
-              <Link href="/contant">
+              <Link href="/contact">
                 <a data-aos="fade-up" className="btn btn-outline btn-lg shadow">Contact Us</a>
               </Link>
             </div>
