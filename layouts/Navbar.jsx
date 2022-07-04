@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import log from "../public/images/logo.png"
+import log from "../public/images/logo3.png"
 import logb from "../public/images/b.png"
 
 
@@ -76,9 +76,7 @@ const Navbar = () => {
         >
           <div className="navbar-nav">
             <Link href="/" passHref>
-              <a className="nav-link mx-2" aria-current="page">
-                Home
-              </a>
+              <a className="nav-link mx-2">Home</a>
             </Link>
             <Link href="/menu" passHref>
               <a className="nav-link mx-2">Menu</a>

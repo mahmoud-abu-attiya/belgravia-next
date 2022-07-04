@@ -176,7 +176,7 @@ header.reservation .row form .form-check-input:checked {
 }
 
 .hello h1 {
-  max-width: 270px;
+  max-width: 570px;
   margin: auto;
   font-size: 40px;
 }
@@ -225,7 +225,7 @@ main form {
   background-color: #33000048;
 }
 
-.form-control:focus {
+.form-control:focus , .form-select:focus {
   box-shadow: 0 0 0 0.25rem rgb(70 0 0 / 25%);
 }
 
@@ -261,6 +261,11 @@ main form {
   border-color: var(--gray--);
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+.navbar-brand{
+  width: 20%;
+  max-width: 200px;
 }
 
 .nav_not_top {
@@ -301,6 +306,10 @@ section {
 .btn-outline:hover {
   color: #fff;
   background-color: var(--darkredone--);
+}
+
+.call-icon{
+  position: absolute;
 }
 
 footer a.btn {

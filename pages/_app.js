@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import Loading from '../layouts/Loading';
 import { useEffect } from 'react'
 import WhatsApp from '../layouts/WhatsApp';
+import Call from '../layouts/Call';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -42,6 +43,7 @@ function MyApp({ Component, pageProps }) {
       <Loading />
       <Component {...pageProps} />
       <WhatsApp />
+      <Call />
       <Footer />
     </>
   )
