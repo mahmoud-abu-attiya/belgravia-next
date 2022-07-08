@@ -21,7 +21,7 @@ export default function Home() {
       <header className={styles.headerHome}>
         <div className={styles.headerOverlay}></div>
         <div className="hello">
-          <h1 data-aos="fade-up" data-aos-duration="300">Welcome to Belgravia Restaurant</h1>
+          <h1 data-aos="fade-up" data-aos-duration="300">Belgravia Restaurant welcomes you</h1>
           <p data-aos="fade-up" data-aos-duration="500">A modern cuisine welcoming you all the way from London to Qatar</p>
           <Link href="/reservation">
             <a data-aos="fade-up" data-aos-duration="700" className="btn btn-lg shadow rounded-pill">Book a table</a>

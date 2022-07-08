@@ -57,7 +57,7 @@ export default function Menu() {
         <div className={styles.headerOverlay}></div>
         <div className="hello">
           <h1 data-aos="fade-up" data-aos-duration="300">
-            Welcome to Belgravia Restaurant
+            Belgravia Restaurant welcomes you
           </h1>
           <p data-aos="fade-up" data-aos-duration="500">
             A wide variety of international dishes can be found in Belgravia Restaurant 

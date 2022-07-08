@@ -56,13 +56,12 @@ const about = () => {
         <meta name="og:title" content="About Belgravia Restaurant" />
         <meta name="og:description" content="Belgravia restaurant is a modern cuisine that offer a different kind of dishes, coming from London with European influence."/>
         <meta property="og:url" content="https://belgravia.qa/about" />
-
       </Head>
       <header className={styles.headerAbout}>
         <div className="header-overlay"></div>
         <div className="hello">
           <h1 data-aos="fade-up" data-aos-duration="300">
-            Welcome to Belgravia Restaurant
+            Belgravia Restaurant welcomes you
           </h1>
           <p data-aos="fade-up" data-aos-duration="500">
           Belgravia restaurant is a modern cuisine that offer a different kind of dishes, coming from London with European influence.
