@@ -5,7 +5,6 @@ import swal from 'sweetalert';
 
 const ResForm = () => {
   const [startDate, setStartDate] = useState(new Date());
-  // const [time, setTime] = useState("")
   useEffect(() => {
     let resForm = document.querySelector("form")
     let optionsBox = document.querySelector(".options")

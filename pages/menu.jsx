@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Script from "next/script";
 import Link from "next/link";
 import styles from "../styles/Menu.module.css";
 import axios from "axios";
@@ -14,19 +13,18 @@ import "swiper/css/navigation";
 
 export default function Menu() {
   const [meals, setMeals] = useState([]);
-  const [categorys, setCategorys] = useState([])
-  const [category, setCategory] = useState('chicken')
-  const [catNum, setCarNum] = useState(5)
+  const [categorys, setCategorys] = useState([]);
+  const [category, setCategory] = useState("chicken");
+  const [catNum, setCarNum] = useState(5);
 
-  
   useEffect(() => {
     if (window.innerWidth < 767) {
-      setCarNum(3)
+      setCarNum(3);
     }
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/list.php?c=list`)
       .then((response) => {
-        setCategorys(response.data.meals )
+        setCategorys(response.data.meals);
       })
       .catch((error) => {
         setError(error);
@@ -48,9 +46,15 @@ export default function Menu() {
     <>
       <Head>
         <title>Belgravia Menu</title>
-        <meta name="description" content="A wide variety of international dishes can be found in Belgravia Restaurant " />
+        <meta
+          name="description"
+          content="A wide variety of international dishes can be found in Belgravia Restaurant "
+        />
         <meta name="og:title" content="Belgravia Menu" />
-        <meta name="og:description" content="A wide variety of international dishes can be found in Belgravia Restaurant" />
+        <meta
+          name="og:description"
+          content="A wide variety of international dishes can be found in Belgravia Restaurant"
+        />
         <meta property="og:url" content="https://belgravia.qa/menu" />
       </Head>
       <header className={styles.headerMenu}>
@@ -60,7 +64,8 @@ export default function Menu() {
             Belgravia Restaurant welcomes you
           </h1>
           <p data-aos="fade-up" data-aos-duration="500">
-            A wide variety of international dishes can be found in Belgravia Restaurant 
+            A wide variety of international dishes can be found in Belgravia
+            Restaurant
           </p>
           <Link href="/reservation">
             <a
@@ -91,7 +96,16 @@ export default function Menu() {
           {categorys.map((cat, index) => {
             return (
               <SwiperSlide key={index}>
-                <button className={ cat.strCategory == category ? 'active-cat btn btn-outline category': 'btn btn-outline category'} onClick={()=> setCategory(cat.strCategory)}>{cat.strCategory}</button>
+                <button
+                  className={
+                    cat.strCategory == category
+                      ? "active-cat btn btn-outline category"
+                      : "btn btn-outline category"
+                  }
+                  onClick={() => setCategory(cat.strCategory)}
+                >
+                  {cat.strCategory}
+                </button>
               </SwiperSlide>
             );
           })}

@@ -7,13 +7,7 @@ import logb from "../public/images/b.png"
 
 const Navbar = () => {
   const [logo, setLogo] = useState(false)
-  // const handelLogo = () => {
-  //   if (window.offsetWidth >= 767) {
-  //     return(<Image src={logb} alt="belgravia" />)
-  //   }else{
-  //     return(<Image src={log} alt="belgravia" />)
-  //   }
-  // }
+
   const navEffect = () => {
     let navbar = document.getElementById("nav");
     if (window.scrollY > 0) {
@@ -25,11 +19,8 @@ const Navbar = () => {
   useEffect(() => {
     if (window.innerWidth < 767) {
       setLogo(true)
-      // console.log(window.offsetWidth);
     }else{
       setLogo(false)
-      // console.log(window.innerWidth);
-      // console.log(logo);
     }
     let btnToggler = document.querySelector(".navbar-toggler");
     let navbar = document.getElementById("nav");
@@ -54,8 +45,6 @@ const Navbar = () => {
       <div className="container-fluid">
         <Link href="/">
           <a className="navbar-brand">
-            {/* <Image src={log} alt="belgravia" />
-            <Image src={logb} alt="belgravia" /> */}
             {logo ? <Image src={logb} alt="belgravia" /> : <Image src={log} alt="belgravia" />}
           </a>
         </Link>
