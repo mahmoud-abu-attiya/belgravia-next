@@ -23,10 +23,7 @@ const Swip = () => {
       <div className="container text-center">
         <h2>Discover our Dishes</h2>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-          commodi vitae nihil est. Quia, harum cupiditate velit error repellat
-          suscipit enim maiores nam facilis totam molestiae ipsum, architecto
-          quisquam fugiat.
+        Take a look at our menu to induce and view our divine dishes. 
         </p>
         <Swiper
           effect={"cards"}

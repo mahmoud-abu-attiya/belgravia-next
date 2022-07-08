@@ -46,10 +46,10 @@ const Form = () => {
       </div>
       <div className="col-12 mb-3">
         <select className="form-select" id="validationCustom04" >
-          <option selected disabled value="">Choose subject...</option>
-          <option value="">hi1</option>
-          <option value="">hi2</option>
-          <option value="">hi2</option>
+          <option defaultValue disabled>Choose subject...</option>
+          <option>hi1</option>
+          <option>hi2</option>
+          <option>hi2</option>
         </select>
       </div>
       <div className="col-12 form-floating mb-3">

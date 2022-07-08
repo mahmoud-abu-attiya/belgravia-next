@@ -21,7 +21,7 @@ const Info = () => {
             <hr />
             <div className="contact-info">
               <h5>contact</h5>
-              <a href="tel: +0097444445660">
+              <a href="tel: +97444445660">
                 <i className="mx-2 fas fa-phone-alt"></i>
                 (00974) 4444 5660
               </a>
