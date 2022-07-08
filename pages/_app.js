@@ -26,8 +26,10 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta charset="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta httpEquiv="content-language" content="en" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+        <link rel="apple-touch-icon image_src" href="/favicon.ico" />
         <meta name="theme-color" content="#330000" />
         <meta name="msapplication-navbutton-color" content="#330000" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#330000" />

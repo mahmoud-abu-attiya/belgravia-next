@@ -38,7 +38,7 @@ export default function Home() {
         img={hImg}
         imgalt = "belgravia"
         title= "About us"
-        btn= "Read more"
+        btn= "Read more about us"
         colimg= "col-md"
         coltext= "col-md"
         btnLink="/about"
