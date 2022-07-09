@@ -27,6 +27,7 @@ jobs:
         with:
           node-version: 16
  
+
       - name: Install python deps
         run: |
           pip install --upgrade pip
@@ -43,10 +44,11 @@ jobs:
 
       - name: Build and compress files
         run: |
-          npm install --global yarn
+          npm install yarn
           yarn install
           yarn build
           tar -czvf build.tar.gz ./.next
+          source ./.venv/bin/activate
           scp build.tar.gz ubuntu@44.208.45.254:~/blgrv/belgravia-next/build.tar.gz
      
       - name: "Deploy project"
