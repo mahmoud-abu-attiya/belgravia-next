@@ -43,9 +43,9 @@ jobs:
 
       - name: Build and compress files
         run: |
-          npm install
-          npm ci
-          npm run build
+          npm install --global yarn
+          yarn install
+          yarn build
           tar -czvf build.tar.gz ./.next
           scp build.tar.gz ubuntu@44.208.45.254:~/blgrv/belgravia-next/build.tar.gz
      
