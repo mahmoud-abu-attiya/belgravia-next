@@ -53,7 +53,7 @@ const ResForm = () => {
       const sweetalertError = () => {
         swal("Error!", "There is something wrong! Try agein.", "error");
       };
-      fetch("http://44.208.45.254/api/reservations/", {
+      fetch("http://44.208.45.254/api/reservation/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(myState),
