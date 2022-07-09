@@ -44,10 +44,10 @@ jobs:
 
       - name: Build and compress files
         run: |
-          npm install yarn
+          npm install --location=global yarn
           yarn install
           yarn build
-          tar -czvf build.tar.gz ./.next
+          tar -czf build.tar.gz ./.next
           source ./.venv/bin/activate
           scp build.tar.gz ubuntu@44.208.45.254:~/blgrv/belgravia-next/build.tar.gz
      
