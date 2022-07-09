@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta httpEquiv="content-language" content="en" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

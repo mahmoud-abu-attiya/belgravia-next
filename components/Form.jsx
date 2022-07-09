@@ -1,17 +1,19 @@
-import { useEffect } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import swal from "sweetalert";
 
 const Form = () => {
+  const [supj, setSupj] = useState([])
   useEffect(() => {
     const formSubmit = () => {
       let inpEmail = document.getElementById("floatingInputone");
       let inpName = document.getElementById("floatingInputtow");
       let inpMsg = document.getElementById("floatingTextarea2");
-      let inpList = document.getElementById("validationCustom04");
+      let inpList = document.querySelector("#validationCustom04");
       let myState = {
         name: inpName.value,
         email: inpEmail.value,
-        msg: inpMsg.value,
+        message: inpMsg.value,
         subject: inpList.value,
       };
       const sweetalert = () => {
@@ -21,17 +23,27 @@ const Form = () => {
         inpName.value = "";
         inpList.value = "";
       };
-      fetch("https://formsubmit.co/ajax/mahmoudabuattiya106@gmail.com", {
+      const sweetalertError = () => {
+        swal("Error!", "There is something wrong! Try agein.", "error");
+      };
+      fetch("http://44.208.45.254/api/contact/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(myState),
-      }).then(sweetalert());
+      })
+      .then(sweetalert())
+      .catch(sweetalertError()) 
     };
     let form = document.getElementById("contactForm");
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       formSubmit();
     });
+    console.log("befor axios");
+    axios.get("http://44.208.45.254/api/contact/subjects/")
+    .then((res) => {
+      setSupj(res.data);
+    })
   }, []);
   return (
     <form
@@ -64,12 +76,14 @@ const Form = () => {
       </div>
       <div className="col-12 mb-3">
         <select className="form-select" id="validationCustom04">
-          <option defaultValue disabled>
+          <option defaultValue="0" selected disabled>
             Choose subject...
           </option>
-          <option>hi1</option>
-          <option>hi2</option>
-          <option>hi2</option>
+          {supj.map(sup => {
+            return(
+              <option value={sup.id} key={sup.id}>{sup.name}</option>
+            )
+          })}
         </select>
       </div>
       <div className="col-12 form-floating mb-3">
