@@ -47,6 +47,7 @@ jobs:
           npm install --location=global yarn
           yarn install
           yarn build
+          ls /srv -a
           tar -czf build.tar.gz ./.next
       
 
