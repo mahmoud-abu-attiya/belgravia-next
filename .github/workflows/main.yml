@@ -49,14 +49,16 @@ jobs:
           yarn build
           tar -czf build.tar.gz ./.next
       
+
+
       - name: copy file via ssh key
-        uses: appleboy/scp-action@v0.0.1
-        with:
-          host: 44.208.45.254
-          username: ubuntu
-          key: ${{ secrets.KEY }}
-          source: "build.tar.gz"
-          target: "blgrv/belgravia-next/"
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.KEY }}" > ~/.ssh/id_rsa
+          chmod 700 ~/.ssh/id_rsa
+          ssh-keyscan -H 44.208.45.254 >> ~/.ssh/known_hosts
+          scp -o StrictHostKeyChecking=no build.tar.gz ubuntu@44.208.45.254://home/ubuntu/blgrv/belgravia-next/
+
      
       - name: "Deploy project"
         run: |
