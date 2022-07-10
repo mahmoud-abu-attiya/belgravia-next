@@ -3,21 +3,19 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards } from "swiper";
 import Image from "next/image";
-import d1 from "../public/images/d1.jpg";
-import d2 from "../public/images/d2.jpg";
-import d3 from "../public/images/d3.jpg";
-import d4 from "../public/images/d4.jpg";
-import d5 from "../public/images/d5.jpg";
-import d6 from "../public/images/d6.jpg";
-import d7 from "../public/images/d7.jpg";
-import d8 from "../public/images/d8.jpg";
-import d9 from "../public/images/d9.jpg";
 import Link from "next/link";
 import fork from "../public/images/fork.png"
 import knife from "../public/images/knife.png"
+import { useEffect, useState } from "react";
 
 const Swip = () => {
-  let swipImage = [d1, d2, d3, d4, d5, d6, d7, d8, d9];
+  let [swipImage, setImages] = useState([]);
+  useEffect(async () => {
+    let url = 'http://44.208.45.254/api/home/products/'
+    let response = await fetch(url);
+    let data = await response.json();
+    setImages(data);
+  }, []);
   return (
     <section className="dishes bg-light py-5">
       <div className="container text-center">
@@ -41,7 +39,7 @@ const Swip = () => {
           </div>
           {swipImage.map((el, index) => (
             <SwiperSlide key={index} className="shadow">
-              <Image src={el} layout="fill" alt="belgravia food" className="image_border" />
+              <Image src={el.image} layout="fill" alt="belgravia food" className="image_border" />
             </SwiperSlide>
           ))}
         </Swiper>
