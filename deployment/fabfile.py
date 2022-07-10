@@ -9,7 +9,8 @@ env.hosts = ['ubuntu@44.208.45.254']
 
 def update():
     with prefix('cd {}'.format(PROJECT_DIR)):
-        run('tar –xvzf build.tar.gz')
+        sudo('chmod 700 build.tar.gz')
+        run('tar xvzf build.tar.gz')
+        run('pm2 stop nextjs')
         run('pm2 start yarn --name nextjs -- start')
-
 
