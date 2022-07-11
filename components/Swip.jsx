@@ -7,15 +7,14 @@ import Link from "next/link";
 import fork from "../public/images/fork.png"
 import knife from "../public/images/knife.png"
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Swip = () => {
   let [swipImage, setImages] = useState([]);
-  useEffect(async () => {
-    let url = 'http://44.208.45.254/api/home/products/'
-    let response = await fetch(url);
-    let data = await response.json();
-    setImages(data);
+  useEffect(() => {
+    axios.get('http://44.208.45.254/api/home/products/').then(res => setImages(res.data))
   }, []);
+
   return (
     <section className="dishes bg-light py-5">
       <div className="container text-center">
@@ -37,9 +36,9 @@ const Swip = () => {
           <div className="tool knife">
             <Image src={knife} alt="knife" />
           </div>
-          {swipImage.map((el, index) => (
-            <SwiperSlide key={index} className="shadow">
-              <Image src={el.image} layout="fill" alt="belgravia food" className="image_border" />
+          {swipImage.map((el) => (
+            <SwiperSlide key={el.id} className="shadow">
+              <Image src={el.image} layout="fill" alt="belgravia food" className="image_border" priority />
             </SwiperSlide>
           ))}
         </Swiper>
