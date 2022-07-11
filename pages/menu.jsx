@@ -4,7 +4,6 @@ import styles from "../styles/Menu.module.css";
 import axios from "axios";
 import { useState, useEffect, lazy, Suspense } from "react";
 import Image from "next/image";
-import Dish from "../components/Dish";
 import ScrollDownBtn from "../components/ScrollDownBtn";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
@@ -12,7 +11,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import MenuPlaceholder from "../components/MenuPlaceholder";
-// import Dish from "../components/Dish";
 
 export default function Menu() {
   const Dish = lazy(() => import('../components/Dish'));
@@ -20,7 +18,7 @@ export default function Menu() {
 
   const [meals, setMeals] = useState([]);
   const [categorys, setCategorys] = useState([]);
-  const [category, setCategory] = useState("chicken");
+  const [category, setCategory] = useState(1);
   const [catNum, setCarNum] = useState(5);
 
   useEffect(() => {
@@ -28,9 +26,9 @@ export default function Menu() {
       setCarNum(3);
     }
     axios
-      .get(`https://www.themealdb.com/api/json/v1/1/list.php?c=list`)
+      .get(`http://44.208.45.254/api/categories/`)
       .then((response) => {
-        setCategorys(response.data.meals);
+        setCategorys(response.data);
       })
       .catch((error) => {
         setError(error);
@@ -39,12 +37,13 @@ export default function Menu() {
 
   useEffect(() => {
     axios
-      .get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
+      .get(`http://44.208.45.254/api/products/${category}`)
       .then((response) => {
-        setMeals(response.data.meals);
+        setMeals(response.data);
+        console.log(response.data);
       })
-      .catch((error) => {
-        setError(error);
+      .catch(err => {
+        console.log('caught it!',err);
       });
   }, [category]);
 
@@ -104,21 +103,21 @@ export default function Menu() {
               <SwiperSlide key={index}>
                 <button
                   className={
-                    cat.strCategory == category
+                    cat.name == category
                       ? "active-cat btn btn-outline category"
                       : "btn btn-outline category"
                   }
-                  onClick={() => setCategory(cat.strCategory)}
+                  onClick={() => setCategory(cat.id)}
                 >
-                  {cat.strCategory}
+                  {cat.name}
                 </button>
               </SwiperSlide>
             );
           })}
         </Swiper>
         <div className="row row-cols-1 row-cols-md-2 g-4 mb-5">
-          {meals.map((meal, index) => (
-            <Suspense key={index} fallback={renderLoader()}>
+          {meals.map((meal) => (
+            <Suspense key={meal.id} fallback={renderLoader()}>
               <Dish meal={meal} />
             </Suspense>
           ))}
