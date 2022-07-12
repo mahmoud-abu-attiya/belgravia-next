@@ -26,12 +26,16 @@ const Form = () => {
       const sweetalertError = () => {
         swal("Error!", "There is something wrong! Try agein.", "error");
       };
+      console.log(JSON.stringify(myState));
       fetch("http://44.208.45.254/api/contact/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(myState),
       })
       .then((res) => {
+        console.log(res.status);
+        console.log(res);
+        
         if (res.status === 201) {
           sweetalert()
         }else{
