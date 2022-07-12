@@ -31,8 +31,16 @@ const Form = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(myState),
       })
-      .then(sweetalert())
-      .catch((error) => {
+      .then((res) => {
+        if (res.status === 201) {
+          sweetalert()
+        }else{
+          sweetalertError()
+        }
+        res.json().then((data) => {
+          console.log(data);
+        })
+      }).catch((error) => {
         console.log(error);
         console.log(error.json());
         sweetalertError()
