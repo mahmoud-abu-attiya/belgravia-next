@@ -32,7 +32,11 @@ const Form = () => {
         body: JSON.stringify(myState),
       })
       .then(sweetalert())
-      .catch(sweetalertError()) 
+      .catch((error) => {
+        console.log(error);
+        console.log(error.json());
+        sweetalertError()
+      }) 
     };
     let form = document.getElementById("contactForm");
     form.addEventListener("submit", (e) => {
