@@ -12,5 +12,6 @@ def update():
         sudo('chmod 700 build.tar.gz')
         run('tar xvzf build.tar.gz')
         run('pm2 stop nextjs')
+        run('npm install --force')
         run('pm2 start yarn --name nextjs -- start')
 
