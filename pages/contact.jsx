@@ -18,7 +18,7 @@ const contact = () => {
         />
         <meta property="og:url" content="https://belgravia.qa/contact" />
       </Head>
-      <main className="text-center pt-5">
+      <div className="contact text-center pt-5">
         <div className="container py-5 mt-5">
           <div className="mb-5 pb-5 px-lg-5 px-1">
             <h2>Contact With us</h2>
@@ -29,7 +29,7 @@ const contact = () => {
           </div>
           <Form />
         </div>
-      </main>
+      </div>
       <Info />
     </>
   );

@@ -214,13 +214,13 @@ header.reservation .row form .form-check-input:checked {
   color: var(--gray--) !important;
 }
 
-main {
+.contact {
   background-image: linear-gradient(to top, #fff, #ccc, rgba(255, 255, 255, 0.356)), url("../public/images/about.jpg");
   background-size: cover;
   background-position: center;
 }
 
-main form {
+.contact form {
   backdrop-filter: blur(10px);
   background-color: #33000048;
 }
