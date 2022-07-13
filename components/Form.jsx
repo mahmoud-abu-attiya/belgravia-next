@@ -3,19 +3,23 @@ import { useEffect, useState } from "react";
 import swal from "sweetalert";
 
 const Form = () => {
-  const [supj, setSupj] = useState([])
+  const [supj, setSupj] = useState([]);
+
   useEffect(() => {
+    axios.get("http://44.208.45.254/api/contact/subjects/").then((res) => {
+      setSupj(res.data);
+    });
     const formSubmit = () => {
-      let inpEmail = document.getElementById("floatingInputone");
-      let inpName = document.getElementById("floatingInputtow");
-      let inpMsg = document.getElementById("floatingTextarea2");
-      let inpList = document.querySelector("#validationCustom04");
-      let myState = {
-        name: inpName.value,
-        email: inpEmail.value,
-        message: inpMsg.value,
-        subject: inpList.value,
-      };
+      let inpEmail = document.getElementById("floatingInputone"),
+        inpName = document.getElementById("floatingInputtow"),
+        inpMsg = document.getElementById("floatingTextarea2"),
+        inpList = document.querySelector("#validationCustom04"),
+        myState = {
+          name: inpName.value,
+          email: inpEmail.value,
+          message: inpMsg.value,
+          subject: inpList.value,
+        };
       const sweetalert = () => {
         swal("Thanks!", "We will contact you as soon as possible.", "success");
         inpEmail.value = "";
@@ -26,43 +30,26 @@ const Form = () => {
       const sweetalertError = () => {
         swal("Error!", "There is something wrong! Try agein.", "error");
       };
-      console.log(JSON.stringify(myState));
-      fetch("http://44.208.45.254/api/contact/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(myState),
-      })
-      .then((res) => {
-        console.log(res.status);
-        console.log(res);
-        
-        if (res.status === 201) {
-          sweetalert()
-        }else{
-          sweetalertError()
-        }
-        res.json().then((data) => {
-          console.log(data);
+      axios
+        .post("http://44.208.45.254/api/contact/", myState)
+        .then((res) => {
+          console.log("res", res.data);
+          sweetalert();
         })
-      }).catch((error) => {
-        console.log(error);
-        console.log(error.json());
-        sweetalertError()
-      }) 
+        .catch((err) => {
+          console.log("error in request", err);
+          sweetalertError();
+        });
     };
     let form = document.getElementById("contactForm");
-    form.addEventListener("submit", (e) => {
+    form.onsubmit = (e) => {
       e.preventDefault();
       formSubmit();
-    });
-    console.log("befor axios");
-    axios.get("http://44.208.45.254/api/contact/subjects/")
-    .then((res) => {
-      setSupj(res.data);
-    })
+    };
   }, []);
   return (
     <form
+      method="POST"
       className="row g-3 my-5 rounded-4 p-md-4 p-2 text-center image_border shadow"
       id="contactForm"
     >
@@ -91,14 +78,16 @@ const Form = () => {
         </label>
       </div>
       <div className="col-12 mb-3">
-        <select className="form-select" id="validationCustom04">
-          <option defaultValue="0" selected disabled>
+        <select defaultValue="" className="form-select" id="validationCustom04">
+          <option value="" disabled>
             Choose subject...
           </option>
-          {supj.map(sup => {
-            return(
-              <option value={sup.id} key={sup.id}>{sup.name}</option>
-            )
+          {supj.map((sup) => {
+            return (
+              <option value={sup.id} key={sup.id}>
+                {sup.name}
+              </option>
+            );
           })}
         </select>
       </div>
