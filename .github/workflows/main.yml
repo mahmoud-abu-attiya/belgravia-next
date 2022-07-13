@@ -45,7 +45,7 @@ jobs:
       - name: Build and compress files
         run: |
           npm install --force
-          npm build
+          npm run build
           ls /srv -a
           tar -czf build.tar.gz ./.next
       
