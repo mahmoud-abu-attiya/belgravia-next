@@ -18,36 +18,23 @@ const about = () => {
   const staff = [
     {
       img: c2,
-      name: "name",
-      recipe: "chef position",
+      name: "Mina Atef",
+      recipe: "Restaurant Manager",
+      position: "right center",
     },
     {
       img: c3,
-      name: "name",
-      recipe: "chef position",
+      name: "Omar Alaoui",
+      recipe: "Executive chef & co - founder",
+      position: "left center",
     },
     {
       img: c4,
-      name: "name",
-      recipe: "chef position",
+      name: "Anastasia gvozdeva",
+      recipe: "Hostess",
+      position: "right center",
     },
-    {
-      img: c5,
-      name: "name",
-      recipe: "chef position",
-      contactLink: "#"
-    },
-    {
-      img: c6,
-      name: "name",
-      recipe: "chef position",
-    },
-    {
-      img: cstaff,
-      name: "Ckitchen Staff",
-      recipe: null,
-    }
-  ]
+  ];
   return (
     <>
       <Head>
@@ -103,14 +90,17 @@ const about = () => {
         title= "About The Executive Chef"
         colimg= "col-md-4"
         coltext= "col-md-8"
-        content="Belgravia Restaurant is a combination of both a restaurant and a café welcoming you all the way from London to Al Hazm Mall. With its elegant décor and the highly skilled employees, your experience in Belgravia will for sure be top-notch. Belgravia’s variety of delectable dishes are served with a Middle Eastern touch. Belgravia’s high-quality chefs are London trained and have had experience for over 20 years. Their outstanding personalities provided all our regulars with an unforgettable experience. Belgravia’s outdoor location, nice terrace and outdoor air-conditioned seating adds to the London-effect. To add to that, Belgravia’s most famous dish, Risotto, is the best in Qatar and the main reason our regulars dine at our restaurant."
+        content="Belgravia’s Executive Chef Mr. Omar Alawi worked in a French restaurant when he was 20 years old in Kensington and Chelsea Borough. He was taught by strict French Chefs then moved to different restaurants to learn different styles from around the world. In the year 2000, Mr. Omar accepted an offer to work with the company he was employed at before. 4 years later, in 2004, he became the head chef in that restaurant, and that gave him the ability to add dishes and play with the menu. Gradually, the place became busier and attracted more middle eastern customers. It gave him the opportunity to make something for them and dishes they prefer and eat. Middle Eastern people went crazy over the dishes he created. As of that, the place became an attraction for the middle eastern throughout the year especially during summer. After 14 years, he left the restaurant and got to know Sheikha Lulwa Al-Thani and they co-founded “Belgravia Restaurant”."
 
       />
       <section className="staff bg-light py-5">
         <div className="container">
             <div className="text-center">
               <h2>Our staff</h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, dolore!</p>
+              <p>
+              Belgravia’s set of highly experienced staff is welcoming you with
+              open arms.
+            </p>
             </div>
           <div className="row g-4">
             <div className="col-12">
@@ -125,7 +115,6 @@ const about = () => {
                   />
                 <div className={styles.info}>
                   <h4>Belgravia staff</h4>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse aperiam, perferendis ut nam</p>
                 </div>
               </div>
             </div>
@@ -138,6 +127,7 @@ const about = () => {
                     className={styles.chefImage} 
                     layout="fill" 
                     alt={chef.name}
+                    objectPosition={chef.position}
                     objectFit="cover"
                     priority
                     />

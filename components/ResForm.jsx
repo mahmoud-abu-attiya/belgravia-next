@@ -5,7 +5,7 @@ import swal from 'sweetalert';
 
 const ResForm = () => {
   const [startDate, setStartDate] = useState(new Date());
-  const [time, setTime] = useState("")
+  const [time, setTime] = useState("01:00 PM")
   const [location, setLocation] = useState(true)
   const [seats, setSeats] = useState(1)
   useEffect(() => {
@@ -23,6 +23,7 @@ const ResForm = () => {
         e.preventDefault();
         timeInp.value = option.innerText;
         setTime(timeInp.value);
+        optionsBox.classList.toggle("show-options");
       }
     })
     resForm.onsubmit = (e)=>{
@@ -77,7 +78,7 @@ const ResForm = () => {
       </div>
       <div className="time">
         <h5 className="m-0">time</h5>
-        <input type="text" disabled id="time" required/>
+        <input type="text" disabled id="time" value={time} required/>
         <button className="btn" id="timeBtn">
           <i className="fad fa-clock"></i>
         </button>

@@ -24,7 +24,7 @@ const Swip = () => {
     <section className="dishes bg-light py-5">
       <div className="container text-center">
         <h2>Discover our Dishes</h2>
-        <p>Take a look at our menu to induce and view our divine dishes.</p>
+        <p>Take a look at our menu to view the great variety of diverse dishes and induce your excitement. After viewing our indescribable dishes, you will have the choice to visit us or have the food delivered to your doorstep using Talabat, Foody, Carriage, Snoonu or Rafeeq.</p>
         <Swiper
           effect={"cards"}
           grabCursor={true}

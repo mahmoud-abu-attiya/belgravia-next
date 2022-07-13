@@ -419,3 +419,7 @@ footer a.btn:hover {
     margin: 20px auto;
   }
 }
+
+option {
+  width: 100%;
+}

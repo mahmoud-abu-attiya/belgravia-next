@@ -3,7 +3,6 @@ import Link from "next/link";
 import styles from "../styles/Menu.module.css";
 import axios from "axios";
 import { useState, useEffect, lazy, Suspense } from "react";
-import Image from "next/image";
 import ScrollDownBtn from "../components/ScrollDownBtn";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
@@ -13,7 +12,7 @@ import "swiper/css/navigation";
 import MenuPlaceholder from "../components/MenuPlaceholder";
 
 export default function Menu() {
-  const Dish = lazy(() => import('../components/Dish'));
+  const Dish = lazy(() => import("../components/Dish"));
   const renderLoader = () => <MenuPlaceholder />;
 
   const [meals, setMeals] = useState([]);
@@ -31,9 +30,7 @@ export default function Menu() {
         setCategorys(response.data);
         setCategory(response.data[0].id);
       })
-      .catch((error) => {
-        setError(error);
-      });
+      .catch((error) => console.error("caregories error !", error));
   }, []);
 
   useEffect(() => {
@@ -41,11 +38,8 @@ export default function Menu() {
       .get(`http://44.208.45.254/api/products/${category}`)
       .then((response) => {
         setMeals(response.data);
-        console.log(response.data);
       })
-      .catch(err => {
-        console.log('caught it!',err);
-      });
+      .catch((error) => console.error("products error !", error));
   }, [category]);
 
   return (
@@ -99,9 +93,9 @@ export default function Menu() {
           modules={[Navigation]}
           className="mySwiper my-5"
         >
-          {categorys.map((cat, index) => {
+          {categorys.map((cat) => {
             return (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={cat.id}>
                 <button
                   className={
                     cat.name == category
@@ -122,7 +116,6 @@ export default function Menu() {
               <Dish meal={meal} />
             </Suspense>
           ))}
-          {/* <MenuPlaceholder /> */}
         </div>
       </div>
     </>

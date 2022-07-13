@@ -6,18 +6,19 @@ const myLoader = ({ src }) => {
 const Dish = (props) => {
   return (
     <div className="col">
-    <div className="card mb-4 shadow h-100" data-aos="fade-up">
+    <div className="card mb-4 shadow h-100">
       <div>
         <Image
           src={props.meal.image}
           className="card-img-top"
           alt={"Belgravia" + props.meal.name}
-          width={16}
-          height={9}
+          width={5}
+          height={4}
           layout="responsive"
           objectFit="cover"
           loading="eager"
           loader={myLoader}
+          unoptimized={true}
           priority
         />
       </div>
@@ -25,7 +26,7 @@ const Dish = (props) => {
         <h5 className="card-title">{props.meal.name}</h5>
         <p className="card-text">{props.meal.describtion}</p>
         <p className="card-text rounded shadow price mt-auto">
-          {props.meal.price} $
+          {props.meal.price} QR
         </p>
       </div>
     </div>

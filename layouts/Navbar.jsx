@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import log from "../public/images/logo3.png"
 import logb from "../public/images/b.png"
 
-
 const Navbar = () => {
   const [logo, setLogo] = useState(false)
 
@@ -45,7 +44,7 @@ const Navbar = () => {
       <div className="container-fluid">
         <Link href="/">
           <a className="navbar-brand">
-            {logo ? <Image src={logb} alt="belgravia" /> : <Image src={log} alt="belgravia" />}
+            {logo ? <Image src={logb} alt="belgravia" unoptimized={true} /> : <Image src={log} alt="belgravia" />}
           </a>
         </Link>
         <button

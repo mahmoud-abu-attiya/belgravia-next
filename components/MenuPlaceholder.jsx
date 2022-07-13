@@ -10,8 +10,8 @@ const MenuPlaceholder = () => {
             src={placeholderImage}
             className="card-img-top"
             alt="belgravia dish"
-            width={16}
-            height={9}
+            width={5}
+            height={4}
             layout="responsive"
             objectFit="cover"
             loading="eager"
