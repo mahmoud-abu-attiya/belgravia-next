@@ -29,6 +29,7 @@ export default function Menu() {
       .get(`http://44.208.45.254/api/categories/`)
       .then((response) => {
         setCategorys(response.data);
+        setCategory(response.data[0].id);
       })
       .catch((error) => {
         setError(error);
