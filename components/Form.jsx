@@ -6,7 +6,7 @@ const Form = () => {
   const [supj, setSupj] = useState([]);
 
   useEffect(() => {
-    axios.get("http://https://blgrv-api.orizon.qa/api/contact/subjects/").then((res) => {
+    axios.get("https://blgrv-api.orizon.qa/api/contact/subjects/").then((res) => {
       setSupj(res.data);
     });
     const formSubmit = () => {
@@ -31,7 +31,7 @@ const Form = () => {
         swal("Error!", "There is something wrong! Try agein.", "error");
       };
       axios
-        .post("http://https://blgrv-api.orizon.qa/api/contact/", myState)
+        .post("https://blgrv-api.orizon.qa/api/contact/", myState)
         .then((res) => {
           console.log("res", res.data);
           sweetalert();
