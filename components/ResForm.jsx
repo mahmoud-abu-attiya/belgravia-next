@@ -55,7 +55,7 @@ const ResForm = () => {
       const sweetalertError = () => {
         swal("Error!", "There is something wrong! Try agein.", "error");
       };
-      // fetch("http://44.208.45.254/api/reservation/", {
+      // fetch("http://https://blgrv-api.orizon.qa/api/reservation/", {
       //   method: "POST",
       //   headers: { "Content-Type": "application/json" },
       //   body: JSON.stringify(myState),
@@ -64,7 +64,7 @@ const ResForm = () => {
       // .catch(sweetalertError()) 
       // console.log(myState);
       axios
-        .post("http://44.208.45.254/api/reservation/", myState)
+        .post("http://https://blgrv-api.orizon.qa/api/reservation/", myState)
         .then((res) => {
           console.log("done", res.data);
           sweetalert();

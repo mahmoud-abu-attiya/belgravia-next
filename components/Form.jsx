@@ -6,7 +6,7 @@ const Form = () => {
   const [supj, setSupj] = useState([]);
 
   useEffect(() => {
-    axios.get("http://44.208.45.254/api/contact/subjects/").then((res) => {
+    axios.get("http://https://blgrv-api.orizon.qa/api/contact/subjects/").then((res) => {
       setSupj(res.data);
     });
     const formSubmit = () => {
@@ -31,7 +31,7 @@ const Form = () => {
         swal("Error!", "There is something wrong! Try agein.", "error");
       };
       axios
-        .post("http://44.208.45.254/api/contact/", myState)
+        .post("http://https://blgrv-api.orizon.qa/api/contact/", myState)
         .then((res) => {
           console.log("res", res.data);
           sweetalert();
