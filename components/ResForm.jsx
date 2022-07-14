@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import swal from 'sweetalert';
+import axios from "axios";
 
 const ResForm = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -54,16 +55,26 @@ const ResForm = () => {
       const sweetalertError = () => {
         swal("Error!", "There is something wrong! Try agein.", "error");
       };
-      fetch("http://44.208.45.254/api/reservation/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(myState),
-      })
-      .then(sweetalert())
-      .catch(sweetalertError()) 
-      console.log(myState);
+      // fetch("http://44.208.45.254/api/reservation/", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify(myState),
+      // })
+      // .then(sweetalert())
+      // .catch(sweetalertError()) 
+      // console.log(myState);
+      axios
+        .post("http://44.208.45.254/api/reservation/", myState)
+        .then((res) => {
+          console.log("done", res.data);
+          sweetalert();
+        })
+        .catch((err) => {
+          console.log("error in request", err);
+          sweetalertError();
+        });
     }
-  }, []);
+  }, [location]);
   return (
     <form className="bg-light rounded overflow-hidden image_border">
       <div className="date">
