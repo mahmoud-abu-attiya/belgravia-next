@@ -56,7 +56,7 @@ const ResForm = () => {
         swal("Error!", "There is something wrong! Try agein.", "error");
       };
       inpTime.value = time;
-      inpDate.value = startDate;
+      // inpDate.value = startDate;
       inpName.value = "";
       inpPhone.value = "";
       inpSeats.value = seats;
