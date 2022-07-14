@@ -55,6 +55,13 @@ const ResForm = () => {
       const sweetalertError = () => {
         swal("Error!", "There is something wrong! Try agein.", "error");
       };
+      inpTime.value = time;
+      inpDate.value = startDate;
+      inpName.value = "";
+      inpPhone.value = "";
+      inpSeats.value = seats;
+
+
       // fetch("https://blgrv-api.orizon.qa/api/reservation/", {
       //   method: "POST",
       //   headers: { "Content-Type": "application/json" },

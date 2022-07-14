@@ -10,7 +10,10 @@ function Loading() {
     const handleStop = () => {
       setTimeout(() => {setLoading(false) }, 1000);
       if (window.innerWidth < 991) {
-        document.querySelector(".navbar-toggler").click();
+        let btnToggler = document.querySelector(".navbar-toggler")
+        if(btnToggler.getAttribute("aria-expanded") == "true"){
+          btnToggler.click();
+        }
       }
     }
 

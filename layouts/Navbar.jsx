@@ -33,10 +33,6 @@ const Navbar = () => {
     handelNavClick();
     navEffect();
     window.addEventListener("scroll", navEffect);
-    return () => {
-      window.removeEventListener("scroll", navEffect);
-      handelNavClick();
-    };
   }, []);
 
   return (
