@@ -9,6 +9,7 @@ import Loading from "../layouts/Loading";
 import { useEffect } from "react";
 import WhatsApp from "../layouts/WhatsApp";
 import Call from "../layouts/Call";
+import Offer from "../layouts/Offer";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -31,6 +32,7 @@ function MyApp({ Component, pageProps }) {
       <Component {...pageProps} />
       <WhatsApp />
       <Call />
+      <Offer /> 
       <Footer />
       <Script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
