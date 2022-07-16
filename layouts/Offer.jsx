@@ -90,8 +90,8 @@ const Offer = () => {
                 src={isOffer ? offerImage : offerImageP }
                 className="rounded"
                 alt="belgravia offer"
-                width={1}
-                height={1}
+                width={6}
+                height={4}
                 layout="responsive"
                 loader={myLoader}
                 priority
