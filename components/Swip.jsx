@@ -48,6 +48,8 @@ const Swip = () => {
                 className="image_border"
                 loader={myLoader}
                 unoptimized={true}
+                objectFit="cover"
+                objectPosition="center"
                 priority
               />
             </SwiperSlide>
