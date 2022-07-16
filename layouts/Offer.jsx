@@ -3,6 +3,9 @@ import offerImageP from "../public/images/offer.webp"
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const myLoader = ({ src }) => {
+  return src;
+};
 const Offer = () => {
   const [isOffer, setIsOffer] = useState(false)
   const [offer, setOffer] = useState()
@@ -90,6 +93,8 @@ const Offer = () => {
                 width={1}
                 height={1}
                 layout="responsive"
+                loader={myLoader}
+                priority
               />
             </div>
             <div className="modal-footer">
