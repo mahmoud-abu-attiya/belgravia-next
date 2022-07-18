@@ -33,7 +33,6 @@ const Form = () => {
       axios
         .post("https://blgrv-api.orizon.qa/api/contact/", myState)
         .then((res) => {
-          console.log("res", res.data);
           sweetalert();
         })
         .catch((err) => {

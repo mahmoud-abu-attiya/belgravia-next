@@ -60,20 +60,9 @@ const ResForm = () => {
       inpName.value = "";
       inpPhone.value = "";
       inpSeats.value = seats;
-
-
-      // fetch("https://blgrv-api.orizon.qa/api/reservation/", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(myState),
-      // })
-      // .then(sweetalert())
-      // .catch(sweetalertError()) 
-      // console.log(myState);
       axios
         .post("https://blgrv-api.orizon.qa/api/reservation/", myState)
         .then((res) => {
-          console.log("done", res.data);
           sweetalert();
         })
         .catch((err) => {

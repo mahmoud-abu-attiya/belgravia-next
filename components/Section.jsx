@@ -17,8 +17,6 @@ const Section = (props) => {
       setContent(true);
       setImage(res.data.image);
       setText(res.data.text);
-      console.log(text);
-      console.log(image);
     });
   }, [props.api_url, image, text]);
   return (
