@@ -103,7 +103,7 @@ const About = () => {
             </p>
           </div>
           <div className="row g-4">
-            <div className="col-12">
+            <div className="col-12 staff-card">
               <div
                 className={
                   styles.chefCard +

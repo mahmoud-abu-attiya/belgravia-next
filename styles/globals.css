@@ -410,7 +410,8 @@ footer a.btn:hover {
   }
 
   .HIM,
-  .mySwiper .tool {
+  .mySwiper .tool,
+  .staff-card {
     display: none;
   }
 
