@@ -215,7 +215,7 @@ header.reservation .row form .form-check-input:checked {
 }
 
 .contact {
-  background-image: linear-gradient(to top, #fff, #ccc, rgba(255, 255, 255, 0.356)), url("../public/images/about.jpg");
+  background-image: linear-gradient(to top, #fff, #ccc, rgba(255, 255, 255, 0.356)), url("../public/images/ceobg.jpg");
   background-size: cover;
   background-position: center;
 }
