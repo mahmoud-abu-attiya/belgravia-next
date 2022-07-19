@@ -1,5 +1,6 @@
 .headerMenu{
-  background-image: url("../public/images/weater2.jpg");
+  background-image: url("../public/images/menu-bg.jpg");
+  background-position: center top;
 }
 .headerOverlay {
   width: 100%;
