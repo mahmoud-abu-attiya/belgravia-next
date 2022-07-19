@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import log from "../public/images/logo3.png"
-import logb from "../public/images/b.png"
+import logb from "../public/images/b3.png"
 
 const Navbar = () => {
   const [logo, setLogo] = useState(false)
