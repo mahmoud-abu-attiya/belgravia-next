@@ -47,7 +47,7 @@ const WelcomeForm = () => {
       .then((res) => {
         setWelcome(res.data.show_form);
         setToken(res.data.token)
-        setCookie("mainToken", res.data.token, 365)
+        setCookie("mainToken", res.data.token, 665)
       });
     }
   }, [welcome]);
@@ -76,6 +76,7 @@ const WelcomeForm = () => {
             .patch("https://blgrv-api.orizon.qa/api/client-data/", myState , {
               headers:{
                 Authorization: getCookie("mainToken"),
+                'X-CSRFToken': getCookie("csrftoken")
               }
             })
             .then(() => {

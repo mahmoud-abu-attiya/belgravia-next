@@ -36,7 +36,7 @@ const Offer = () => {
     axios
       .get("https://blgrv-api.orizon.qa/api/get-offer/")
       .then((res) => {
-        if (getCookie("offer") == undefined) {
+        if (getCookie("offer") == "") {
           setIsOffer(true);
           setOfferImage(res.data.image);
           setOfferDelay(res.data.time_in_seconds + "000");
