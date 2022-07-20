@@ -30,12 +30,18 @@ const WelcomeForm = () => {
     return "";
   };
   useEffect(() => {
-    let inpName = document.getElementById("wname");
-    let inpEmail = document.getElementById("wemail");
-    let btnClose = document.querySelector(".btn-close")
-    let inpPhone = document.getElementById("wphoneNumber");
-    let inpBday = document.getElementById("wbirthd");
-    if(getCookie("mainToken") == ""){
+    if(getCookie("mainToken") != "" ){
+      console.log("token is here");
+      axios
+        .get("https://blgrv-api.orizon.qa/api/should-show-form/", {
+          headers:{
+            Authorization: getCookie("mainToken"),
+          }
+        })
+        .then((res) => {
+          setWelcome(res.data.show_form);
+        });
+    } else {
       axios
       .get("https://blgrv-api.orizon.qa/api/should-show-form/")
       .then((res) => {
@@ -44,7 +50,15 @@ const WelcomeForm = () => {
         setCookie("mainToken", res.data.token, 365)
       });
     }
+  }, [welcome]);
+  useEffect(() => {
+    let inpName = document.getElementById("wname");
+    let inpEmail = document.getElementById("wemail");
+    let btnClose = document.querySelector(".btn-close")
+    let inpPhone = document.getElementById("wphoneNumber");
+    let inpBday = document.getElementById("wbirthd");
       if (welcome) {
+        console.log("welcome");
         let showWelcomeBtn = document.querySelector("button.showWelcome");
         let welcomeForm = document.getElementById("welcomeForm")
         setTimeout(() => {
@@ -61,7 +75,7 @@ const WelcomeForm = () => {
           axios
             .patch("https://blgrv-api.orizon.qa/api/client-data/", myState , {
               headers:{
-                Authorization: token,
+                Authorization: getCookie("mainToken"),
               }
             })
             .then(() => {
@@ -111,8 +125,6 @@ const WelcomeForm = () => {
                 <div>
                   <p>
                     Please enter your data.
-                    <br />
-                    <small>We'll never share your data with anyone else.</small>
                   </p>
                 </div>
                 <form id="welcomeForm">
