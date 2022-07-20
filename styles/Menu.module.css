@@ -9,6 +9,7 @@
   top: 0;
   left: 0;
   background-color: rgb(255 255 255 / 50%);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(var(--light--)), color-stop(transparent), to(var(--light--)));
   background-image: linear-gradient(to top, var(--light--), transparent, var(--light--));
   z-index: 2;
 }

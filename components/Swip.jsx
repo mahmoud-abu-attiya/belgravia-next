@@ -47,7 +47,6 @@ const Swip = () => {
                 alt="belgravia food"
                 className="image_border"
                 loader={myLoader}
-                unoptimized={true}
                 objectFit="cover"
                 objectPosition="center"
                 priority

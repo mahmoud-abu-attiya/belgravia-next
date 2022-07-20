@@ -1,5 +1,3 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap"); */
-/* @import url('http://fonts.cdnfonts.com/css/berliana-lovely'); */
 @font-face {
   font-family: "Berliana Lovely";
   src: url(../fonts/Berliana\ Lovely\ Freebies.otf);
@@ -42,6 +40,7 @@ a {
   position: fixed;
   width: 100vw;
   height: 100vh;
+  display: -ms-grid;
   display: grid;
   place-content: center;
   background-color: rgba(0, 0, 0, 0.5);
@@ -57,6 +56,7 @@ a {
 header {
   width: 100%;
   min-height: 100vh;
+  display: -ms-grid;
   display: grid;
   place-content: center;
   background-size: cover;
@@ -71,11 +71,13 @@ header {
   position: absolute;
   top: 0;
   left: 0;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(var(--light--)), color-stop(rgb(255 255 255 / 50%)), to(var(--light--)));
   background-image: linear-gradient(to top, var(--light--), rgb(255 255 255 / 50%), var(--light--));
   z-index: 2;
 }
 
 header.reservation {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(var(--light--)), color-stop(rgb(255 255 255 / 50%)), to(var(--light--))), url("../public/images/bookwomen.jpg");
   background-image: linear-gradient(to top, var(--light--), rgb(255 255 255 / 50%), var(--light--)), url("../public/images/bookwomen.jpg");
 }
 
@@ -88,8 +90,13 @@ header.reservation .row form {
   width: 100%;
   height: 100%;
   padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 20px;
 }
 
@@ -103,8 +110,12 @@ header.reservation .row form select {
 }
 
 header.reservation .row form .time {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 20px;
   position: relative;
 }
@@ -116,19 +127,25 @@ form .time .options {
   top: 120%;
   border-radius: 10px;
   display: none;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 10px;
 }
 .show-options{
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
   display: flex !important;
 }
 
 form .time .options button {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   width: auto;
   background-color: rgb(235, 235, 235);
   border: none;
   border-radius: 10px;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -141,7 +158,8 @@ form .time .options::after {
   border-bottom-color: #ccc;
   top: -10px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 form .time .options button:hover:not([disabled]) {
@@ -149,13 +167,12 @@ form .time .options button:hover:not([disabled]) {
 }
 
 header.reservation .row form select {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   display: inline-block;
 }
 
-/* header.reservation .row form select{
-
-} */
 header.reservation .row form input[type="radio"] {
   width: 18px;
   height: 18px;
@@ -189,8 +206,10 @@ header.reservation .row form .form-check-input:checked {
 
 .hello a {
   color: var(--gray--);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   border: 2px solid var(--gray--) !important;
+  -webkit-transition: all 0.7s !important;
   transition: all 0.7s !important;
 }
 
@@ -215,18 +234,21 @@ header.reservation .row form .form-check-input:checked {
 }
 
 .contact {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#fff), color-stop(#ccc), to(rgba(255, 255, 255, 0.356))), url("../public/images/ceobg.jpg");
   background-image: linear-gradient(to top, #fff, #ccc, rgba(255, 255, 255, 0.356)), url("../public/images/ceobg.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .contact form {
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   background-color: #33000048;
 }
 
 .form-control:focus , .form-select:focus {
-  box-shadow: 0 0 0 0.25rem rgb(70 0 0 / 25%);
+  -webkit-box-shadow: 0 0 0 0.25rem rgb(70 0 0 / 25%);
+          box-shadow: 0 0 0 0.25rem rgb(70 0 0 / 25%);
 }
 
 .navbar .nav-link {
@@ -248,6 +270,8 @@ header.reservation .row form .form-check-input:checked {
 .card .price {
   padding: 5px 10px;
   background-color: rgba(0, 128, 0, 0.5);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -270,9 +294,9 @@ header.reservation .row form .form-check-input:checked {
 
 .nav_not_top {
   padding: 10px 0;
-  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
   background-color: rgba(59, 0, 0, 0.205);
-  /* border-bottom: 1px solid var(--darkredtwo--); */
 }
 
 .swiper-button-next,
@@ -300,6 +324,7 @@ section {
 .btn-outline {
   color: var(--darkredtwo--);
   border: 2px solid;
+  -webkit-transition: all 0.3s !important;
   transition: all 0.3s !important;
 }
 
@@ -314,11 +339,14 @@ section {
   background-color: #fff;
   bottom: -1%;
   right: 7%;
-  transform: translate(-50%, -50%);
-  /* border-radius: 50%; */
-  /* display: flex; */
-  justify-content: center;
-  align-items: center;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 20px;
   font-size: 22px;
   cursor: pointer;
@@ -338,6 +366,8 @@ footer a.btn:hover {
 
 .zena {
   position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
 }
 
@@ -350,25 +380,27 @@ footer a.btn:hover {
   top: -8%;
 }
 
-/* .swiper {
-  width: 280px;
-  height: 340px;
-} */
 .swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border-radius: 18px;
   font-size: 22px;
   font-weight: bold;
-  /* color: #fff; */
 }
 
 .mySwiper .tool {
   position: absolute;
   top: 60%;
   left: -50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .mySwiper .knife {
@@ -423,4 +455,26 @@ footer a.btn:hover {
 
 option {
   width: 100%;
+}
+.react-datepicker__navigation--years::after{
+  border-color: #a1a1a1;
+  border-style: solid;
+  border-width: 3px 3px 0 0;
+  content: "";
+  display: block;
+  height: 9px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.react-datepicker__navigation--years-upcoming::after{
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+.react-datepicker__navigation--years-previous::after{
+  -webkit-transform: translate(-50%, -50%) rotate(135deg);
+          transform: translate(-50%, -50%) rotate(135deg);
 }
