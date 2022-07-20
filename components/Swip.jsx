@@ -50,6 +50,7 @@ const Swip = () => {
                 objectFit="cover"
                 objectPosition="center"
                 priority
+                unoptimized={false}
               />
             </SwiperSlide>
           ))}

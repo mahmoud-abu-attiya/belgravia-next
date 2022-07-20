@@ -403,6 +403,10 @@ footer a.btn:hover {
           transform: translate(-50%, -50%);
 }
 
+.category{
+  width: 100%;
+}
+
 .mySwiper .knife {
   right: -80%;
   left: auto;

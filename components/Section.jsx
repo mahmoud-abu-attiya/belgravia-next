@@ -39,6 +39,7 @@ const Section = (props) => {
               loader={myLoader}
               objectFit="cover"
               objectPosition="center"
+              unoptimized={false}
             />
           </div>
           <div className={props.coltext}>

@@ -22,10 +22,10 @@ export default function Menu() {
 
   useEffect(() => {
     if (window.innerWidth < 767) {
-      setCarNum(3);
+      setCarNum(2);
     }
     axios
-      .get(`https://blgrv-api.orizon.qa/api/categories/`)
+      .get("https://blgrv-api.orizon.qa/api/categories/")
       .then((response) => {
         setCategorys(response.data);
         setCategory(response.data[0].id);
@@ -48,12 +48,12 @@ export default function Menu() {
         <title>Belgravia Menu</title>
         <meta
           name="description"
-          content="A wide variety of international dishes can be found in Belgravia Restaurant "
+          content="A wide variety of international dishes can be found in Belgravia Restaurant."
         />
         <meta name="og:title" content="Belgravia Menu" />
         <meta
           name="og:description"
-          content="A wide variety of international dishes can be found in Belgravia Restaurant"
+          content="A wide variety of international dishes can be found in Belgravia Restaurant."
         />
         <meta property="og:url" content="https://belgravia.qa/menu" />
       </Head>
