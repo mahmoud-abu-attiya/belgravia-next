@@ -10,7 +10,7 @@ const WelcomeForm = () => {
   const [token, setToken] = useState("")
   const setCookie = (cname, cvalue, exdays) => {
     const d = new Date();
-    d.setTime(d.getTime() + exdays * 60 * 1000);
+    d.setTime(d.getTime() + exdays * 365 * 60 * 1000);
     let expires = "expires=" + d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   };
@@ -47,7 +47,7 @@ const WelcomeForm = () => {
       .then((res) => {
         setWelcome(res.data.show_form);
         setToken(res.data.token)
-        setCookie("mainToken", res.data.token, 665)
+        setCookie("mainToken", res.data.token, 10)
       });
     }
   }, [welcome]);
