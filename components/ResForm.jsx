@@ -9,6 +9,21 @@ const ResForm = () => {
   const [time, setTime] = useState("01:00 PM")
   const [location, setLocation] = useState(true)
   const [seats, setSeats] = useState(1)
+  const getCookie = (cname) => {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(";");
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == " ") {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  };
   useEffect(() => {
     let resForm = document.querySelector("form")
     let optionsBox = document.querySelector(".options")
