@@ -61,7 +61,7 @@ const ResForm = () => {
       inpPhone.value = "";
       inpSeats.value = seats;
       axios
-        .post("https://blgrv-api.orizon.qa/api/reservation/", myState)
+        .post("https://belgravia.qa/api/reservation/", myState)
         .then((res) => {
           sweetalert();
         })

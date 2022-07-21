@@ -25,7 +25,7 @@ export default function Menu() {
       setCarNum(2);
     }
     axios
-      .get("https://blgrv-api.orizon.qa/api/categories/")
+      .get("https://belgravia.qa/api/categories/")
       .then((response) => {
         setCategorys(response.data);
         setCategory(response.data[0].id);
@@ -35,7 +35,7 @@ export default function Menu() {
 
   useEffect(() => {
     axios
-      .get(`https://blgrv-api.orizon.qa/api/products/${category}`)
+      .get(`https://belgravia.qa/api/products/${category}`)
       .then((response) => {
         setMeals(response.data);
       })

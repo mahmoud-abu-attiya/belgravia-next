@@ -16,7 +16,7 @@ const Swip = () => {
   let [swipImage, setImages] = useState([]);
   useEffect(() => {
     axios
-      .get("https://blgrv-api.orizon.qa/api/home/products/")
+      .get("https://belgravia.qa/api/home/products/")
       .then((res) => setImages(res.data));
   }, []);
 
