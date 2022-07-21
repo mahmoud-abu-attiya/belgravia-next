@@ -31,7 +31,12 @@ const Form = () => {
         swal("Error!", "There is something wrong! Try agein.", "error");
       };
       axios
-        .post("https://belgravia.qa/api/contact/", myState)
+        .post("https://belgravia.qa/api/contact/", myState , {
+          headers:{
+            Authorization: getCookie("mainToken"),
+            'X-CSRFToken': getCookie("csrftoken")
+          }
+        })
         .then((res) => {
           sweetalert();
         })
