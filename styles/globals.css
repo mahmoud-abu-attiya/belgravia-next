@@ -482,3 +482,23 @@ option {
   -webkit-transform: translate(-50%, -50%) rotate(135deg);
           transform: translate(-50%, -50%) rotate(135deg);
 }
+.error_page{
+  background-image:linear-gradient(to top, var(--light--), #5f5f5fa6, var(--light--)), url("../public/images/not-found.jpg");
+}
+.not_found_page{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+.not_found_page div{
+  font-size: 50px;
+  text-transform: uppercase;
+}
+.not_found_page p{
+  text-transform: capitalize;
+}
+.not_found_page p a{
+  font-family: Arial, Helvetica, sans-serif !important;
+  text-transform: capitalize;
+}

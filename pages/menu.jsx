@@ -5,6 +5,7 @@ import axios from "axios";
 import { useState, useEffect, lazy, Suspense } from "react";
 import ScrollDownBtn from "../components/ScrollDownBtn";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useSwiperSlide } from 'swiper/react';
 import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -19,6 +20,7 @@ export default function Menu() {
   const [categorys, setCategorys] = useState([]);
   const [category, setCategory] = useState(1);
   const [catNum, setCarNum] = useState(5);
+  const swiperSlide = useSwiperSlide();
 
   useEffect(() => {
     if (window.innerWidth < 767) {
@@ -35,7 +37,7 @@ export default function Menu() {
 
   useEffect(() => {
     axios
-      .get(`https://belgravia.qa/api/products/${category}`)
+      .get(`https://belgravia.qa/api/products/${category}/`)
       .then((response) => {
         setMeals(response.data);
       })
@@ -84,7 +86,7 @@ export default function Menu() {
           slidesPerView={catNum}
           spaceBetween={10}
           slidesPerGroup={1}
-          loop={true}
+          // loop={true}
           loopFillGroupWithBlank={true}
           pagination={{
             clickable: true,
@@ -98,10 +100,11 @@ export default function Menu() {
               <SwiperSlide key={cat.id}>
                 <button
                   className={
-                    cat.name == category
+                    cat.id == category
                       ? "active-cat btn btn-outline category"
                       : "btn btn-outline category"
                   }
+                  // className={swiperSlide.isActive ? 'active-cat btn btn-outline category' : 'btn btn-outline category'}
                   onClick={() => setCategory(cat.id)}
                 >
                   {cat.name}
