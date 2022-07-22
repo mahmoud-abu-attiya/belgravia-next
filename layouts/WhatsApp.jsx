@@ -5,7 +5,7 @@ const WhatsApp = () => {
   return (
     <div className="whatsapp">
       <WhatsAppWidget
-        phoneNumber="+201020384108"
+        phoneNumber="+97444445660"
         companyName="Belgravia"
         textReplyTime="Online"
       />
