@@ -21,7 +21,7 @@ const contact = () => {
       <div className="contact text-center pt-5">
         <div className="container py-5 mt-5">
           <div className="mb-5 pb-5 px-lg-5 px-1">
-            <h2>Contact With us</h2>
+            <h2>Contact us</h2>
             <p className="fw-bolder">
               For any inquiries, please do not hesitate to contact us either by
               email or through a telephone call.
