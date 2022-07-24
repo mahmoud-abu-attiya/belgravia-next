@@ -4,7 +4,7 @@ const Info = () => {
       <div className="row bg-light rounded image_border shadow-sm">
         <div className="col-md-6 py-md-5 py-4 px-md-4 px-3 text-start d-flex justify-content-between flex-column">
           <div className="wh">
-            <h5>Working Hours (Soft Opening)</h5>
+            <h5>Working Hours</h5>
             <p className="m-0">EVERYDAY, FROM 1PM to 12AM</p>
           </div>
           <hr />
@@ -13,7 +13,7 @@ const Info = () => {
             <p className="m-0">
               Zone 33، Street 380, Building 211.
               <br />
-              Alhazem Mall, Doha, Qatar.
+              Alhazm Mall, Doha, Qatar.
             </p>
           </div>
           <hr />
