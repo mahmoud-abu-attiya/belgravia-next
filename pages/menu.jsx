@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import MenuPlaceholder from "../components/MenuPlaceholder";
 
+let request = null;
 export default function Menu() {
   const Dish = lazy(() => import("../components/Dish"));
   const renderLoader = () => <MenuPlaceholder />;
@@ -36,12 +37,23 @@ export default function Menu() {
   }, []);
 
   useEffect(() => {
+    if (request) {
+      request.cancel()
+    }
+    request = axios.CancelToken.source()
     axios
-      .get(`https://belgravia.qa/api/products/${category}/`)
+      .get(`https://belgravia.qa/api/products/${category}/`, { cancelToken: request.token })
       .then((response) => {
         setMeals(response.data);
       })
-      .catch((error) => console.error("products error !", error));
+      .catch((err) => {
+        if (axios.isCancel(err)) {
+          console.log("we cancelled previous request")
+        } else {
+          console.log("unkonw error")
+          console.log(err)
+        }
+      });
   }, [category]);
 
   return (
