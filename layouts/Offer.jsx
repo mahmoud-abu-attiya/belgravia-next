@@ -34,7 +34,7 @@ const Offer = () => {
       document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     };
     axios
-      .get("https://belgravia.qa/api/get-offer/")
+      .get("http://44.208.45.254/api/get-offer/")
       .then((res) => {
         if (getCookie("offer") == "") {
           setIsOffer(true);
