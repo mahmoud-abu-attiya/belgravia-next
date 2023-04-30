@@ -33,7 +33,7 @@ const WelcomeForm = () => {
     if(getCookie("mainToken") != "" ){
       console.log("token is here");
       axios
-        .get("http://44.208.45.254/api/should-show-form/", {
+        .get("https://belgravia.qa/api/should-show-form/", {
           headers:{
             Authorization: getCookie("mainToken"),
           }
@@ -43,7 +43,7 @@ const WelcomeForm = () => {
         });
     } else {
       axios
-      .get("http://44.208.45.254/api/should-show-form/")
+      .get("https://belgravia.qa/api/should-show-form/")
       .then((res) => {
         setWelcome(res.data.show_form);
         setToken(res.data.token)
@@ -73,7 +73,7 @@ const WelcomeForm = () => {
             dop: inpBday.value,
           };
           axios
-            .patch("http://44.208.45.254/api/client-data/", myState , {
+            .patch("https://belgravia.qa/api/client-data/", myState , {
               headers:{
                 Authorization: getCookie("mainToken"),
                 'X-CSRFToken': getCookie("csrftoken")

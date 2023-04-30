@@ -20,7 +20,7 @@ const Form = () => {
     return "";
   };
   useEffect(() => {
-    axios.get("http://44.208.45.254/api/contact/subjects/").then((res) => {
+    axios.get("https://belgravia.qa/api/contact/subjects/").then((res) => {
       setSupj(res.data);
     });
     const formSubmit = () => {
@@ -45,7 +45,7 @@ const Form = () => {
         swal("Error!", "There is something wrong! Try agein.", "error");
       };
       axios
-        .post("http://44.208.45.254/api/contact/", myState , {
+        .post("https://belgravia.qa/api/contact/", myState , {
           headers:{
             Authorization: getCookie("mainToken"),
             'X-CSRFToken': getCookie("csrftoken")

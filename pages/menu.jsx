@@ -28,7 +28,7 @@ export default function Menu() {
       setCarNum(2);
     }
     axios
-      .get("http://44.208.45.254/api/categories/")
+      .get("https://belgravia.qa/api/categories/")
       .then((response) => {
         setCategorys(response.data);
         setCategory(response.data[0].id);
@@ -42,7 +42,7 @@ export default function Menu() {
     }
     request = axios.CancelToken.source()
     axios
-      .get(`http://44.208.45.254/api/products/${category}/`, { cancelToken: request.token })
+      .get(`https://belgravia.qa/api/products/${category}/`, { cancelToken: request.token })
       .then((response) => {
         setMeals(response.data);
       })

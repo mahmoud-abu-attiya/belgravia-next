@@ -15,4 +15,3 @@ def update():
         run('npm install --force')
         run('pm2 start yarn --name nextjs -- start')
 
-# pm2 start yarn --name nextjs -- start

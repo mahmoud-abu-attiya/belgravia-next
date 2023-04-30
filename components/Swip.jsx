@@ -16,7 +16,7 @@ const Swip = () => {
   let [swipImage, setImages] = useState([]);
   useEffect(() => {
     axios
-      .get("http://44.208.45.254/api/home/products/")
+      .get("https://belgravia.qa/api/home/products/")
       .then((res) => setImages(res.data));
   }, []);
 

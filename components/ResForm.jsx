@@ -76,7 +76,7 @@ const ResForm = () => {
       inpPhone.value = "";
       inpSeats.value = seats;
       axios
-        .post("http://44.208.45.254/api/reservation/", myState , {
+        .post("https://belgravia.qa/api/reservation/", myState , {
           headers:{
             Authorization: getCookie("mainToken"),
             'X-CSRFToken': getCookie("csrftoken")
