@@ -5,7 +5,7 @@ const Info = () => {
         <div className="col-md-6 py-md-5 py-4 px-md-4 px-3 text-start d-flex justify-content-between flex-column">
           <div className="wh">
             <h5>Working Hours</h5>
-            <p className="m-0">EVERYDAY, FROM 1PM to 12AM</p>
+            <p className="m-0">EVERYDAY, FROM 12PM to 12AM</p>
           </div>
           <hr />
           <div className="addres">
@@ -20,9 +20,9 @@ const Info = () => {
           <hr />
           <div className="contact-info">
             <h5>contact</h5>
-            <a href="tel: +97444445660">
+            <a href="tel: +97440001173">
               <i className="mx-2 fas fa-phone-alt"></i>
-              (00974) 4444 5660
+              (00974) 4000 1173
             </a>
             <br />
             <a href="mailto: info@belgravia.qa">
